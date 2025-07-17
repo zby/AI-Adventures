@@ -13,7 +13,7 @@ Consider what Gwern's proposal would actually produce in practice:
 - Gwern's random combination: Randomly select articles about "sky color" and "pizza ingredients" → "Blue sky pizza cheese"
 - Guided search: Darwin actively seeking mechanisms to explain adaptation, then recognizing Malthus' relevance
 
-Gwern acknowledges this inefficiency problem—he knows random combination would generate millions of "blue sky pizza cheese" outputs for every meaningful connection. His proposal essentially accepts massive computational waste as the price for comprehensive exploration. But even with perfect filtering for "usefulness," this brute-force approach leaves the core problem unsolved: how do you make the search tractable?
+Gwern acknowledges this inefficiency problem—he knows random combination would generate millions of "blue sky pizza cheese" outputs for every meaningful connection. His proposal essentially accepts massive computational waste as the price for comprehensive exploration. But even acknowledging the inefficiency, his brute-force approach leaves the core problem unsolved: how do you make the search tractable?
 
 [Information theory](https://en.wikipedia.org/wiki/Information_theory) doesn't help—it measures bits, not meaning. The real challenge requires both smarter targeting of promising combinations and better recognition of which connections actually compress explanatory complexity.
 
@@ -76,9 +76,17 @@ Rather than just explaining Darwin's historical breakthrough, let's demonstrate 
 
 ### Step 1: Building Explanatory Debt (The Prepared Mind)
 
+**What is Explanatory Debt?**
+
+Explanatory debt occurs when you can efficiently describe patterns but lack causal mechanisms to explain why those patterns exist. It's the difference between cataloging observations and understanding them.
+
+Consider Darwin's predicament: He could accurately describe finch beak variations across islands—short thick beaks on seed-rich islands, long thin beaks where nectar-feeding was common. This descriptive knowledge compressed many observations into recognizable patterns. But *why* did these patterns exist? Each required a separate causal story: "God designed each beak for its environment" or "Beaks stretched through use and were inherited."
+
+High explanatory debt signals opportunity: when you have efficient pattern descriptions but expensive causal explanations, you're ripe for a theoretical breakthrough that explains the patterns through a single underlying mechanism.
+
 Our AI system encounters the same observational patterns that puzzled Darwin. Each observation requires separate explanation in the current world model. The system's representation grows increasingly complex: divine creation events for each species, climate-driven adaptations for each environment, use/disuse mechanisms for each trait change. High explanatory debt accumulates.
 
-Framework trigger: When adding new observations consistently requires new parameters rather than leveraging existing patterns, the system flags this domain as "ripe for compression."
+Framework trigger: When you can describe patterns efficiently but explaining *why* those patterns exist requires many separate causal mechanisms, the system flags this domain as "ripe for compression."
 
 ### Step 2: Guided Concept Combination
 
@@ -105,7 +113,7 @@ The more adaptation puzzles in the database, the bigger the compression gain. Wi
 Now we can precisely distinguish breakthrough insights from random noise:
 
 | Type | Generation (Cv) | Description (C) | Unexpectedness (U) | Result |
-|----------|-------------------|-------------------|---------------------|-----------|
+|------|-----------------|-----------------|-------------------|--------|
 | Darwin's Insight | Very High (prepared mind + vast observations) | Very Low (elegant causal rule) | Massive positive | Revolutionary theory |
 | Random Output: "Blue Sky Pizza Cheese" | Low (random article selection) | High (must specify these exact words) | Negative | Meaningless novelty |
 
@@ -141,4 +149,4 @@ The solution requires both guided generation (systematically exploring concepts 
 
 The distinction between mere novelty and genuine insight will separate truly intelligent systems from sophisticated text generators. Simplicity Theory gives us both the generation guidance and selection criteria we need to make AI daydreaming systems practical.
 
-*This critique itself emerged from motivated search—not random combination of Gwern's essay with complexity theory, but goal-directed exploration of how to operationalize "interestingness." The connection worked because it solved a specific problem: measuring insight quality.* 
+*This article itself emerged from motivated search—a goal-directed exploration of how to operationalize "interestingness" that connected Gwern's essay with the "Why we Talk" book by Dessalles.*
