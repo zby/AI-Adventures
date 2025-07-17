@@ -50,7 +50,7 @@ Here we apply U = Cv - C to candidate insights:
 - Cv (generation complexity): How much intellectual preparation and fortunate circumstances were required to produce this connection?
 - High U signals compression gain: Simple insights emerging from complex preparation indicate breakthrough discoveries, not random associations
 
-**The Power of Dual Application**: This is why ST works where other approaches fail. We're not randomly searching—we use unexpectedness measurements to systematically identify where to look (Function 1), then use the same measurements to recognize genuine breakthroughs when they emerge (Function 2). The formula stays constant, but the target of measurement shifts from observed patterns to proposed explanations.
+**The Power of Dual Application**: This is why ST works where other approaches fail. We're not randomly searching—we use unexpectedness measurements to systematically identify where to look (Function 1), then use the same measurements to recognize genuine breakthroughs when they emerge (Function 2). 
 
 ## What Made Darwin's Insight Special: How ST Explains Breakthrough Discovery
 
@@ -87,8 +87,7 @@ What distinguished Darwin's "population theory + adaptation puzzles" from our hy
 Recent computational work by [Sileno and Dessalles](https://arxiv.org/abs/2307.15453) suggests these complexity calculations might be tractable through logic programming, moving ST from pure theory toward implementable discovery systems.
 
 ## Where ST Actually Helps: Targeting and Recognition
-
-Simplicity Theory's complete Interest model addresses both phases of Gwern's challenge more effectively than the U-only framework suggests. For targeting, ST provides dual guidance: explanatory debt detection (high U from simple descriptions requiring complex explanations) AND domain prioritization (high emotional intensity in high-stakes fields). Economic filtering in mature high-stakes domains creates a powerful convergence—the most important unsolved problems necessarily have high complexity, making breakthroughs inherently high-U events.
+Simplicity Theory's Interest model addresses both phases of Gwern's challenge through its dual-component structure. For targeting, ST provides guidance in two ways: explanatory debt detection (high U from simple descriptions requiring complex explanations) AND domain prioritization (high emotional intensity in high-stakes fields). This combination is crucial—using unexpectedness alone would miss important problems in mature domains, while emotional intensity alone would lack precision. Economic filtering in mature high-stakes domains creates a powerful convergence—the most important unsolved problems necessarily have high complexity, making breakthroughs inherently high-U events.
 
 The insight recognition problem appears genuinely solved. ST provides a concrete test for compression gain: when N distinct observations requiring separate explanations collapse to a single mechanism plus local parameters, the compression ratio quantifies breakthrough value. [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates this calculation is actually tractable through logic programming.
 
