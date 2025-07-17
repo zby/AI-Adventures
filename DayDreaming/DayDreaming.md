@@ -56,19 +56,27 @@ If producing a situation ordinarily requires a long, contingent chain of circums
 
 The key insight for AI: Real scientific breakthroughs operate at a meta-level—a thinker suddenly sees that many previously separate observations fall under one short generative scheme. The insight value scales with how much explanatory complexity gets compressed.
 
-## Why Unexpectedness Captures Usefulness
+## Why Unexpectedness Signals Potential Usefulness (With Caveats)
 
-We're using unexpectedness as our metric for insight value. How does this actually capture what Gwern meant by "usefulness"?
+We're using unexpectedness as our *initial filter* for insight potential, but it's crucial to understand its limitations. High unexpectedness indicates that something structurally significant might be happening—but doesn't guarantee usefulness.
 
-The answer lies in what makes scientific and technological insights genuinely valuable: they compress explanatory complexity. When an insight has high unexpectedness (U = Cv - C), it means you've found a short description (low C) for something that would ordinarily require complex specification (high Cv). This is precisely what valuable insights do.
+**The Two-Stage Reality**: A complete discovery system needs:
+1. **Saliency detection** (unexpectedness): "This pattern demands explanation"
+2. **Goal-relevance filtering**: "This explanation advances our objectives"
 
-Consider the pattern across breakthrough discoveries:
+Consider these examples:
 
-- Newton's laws: Complex planetary motions (high Cv) → Simple force equations (low C)
-- Quantum mechanics: Bizarre atomic behaviors (high Cv) → Elegant wave equations (low C) 
-- DNA structure: Heredity mysteries (high Cv) → Double helix replication (low C)
+| Event | Unexpectedness (U) | Usefulness | Why the Gap Exists |
+|-------|-------------------|------------|-------------------|
+| Meeting cousin on random flight | Very High | Very Low | Unexpected but not actionable |
+| Small engineering optimization | Very Low | Very High | Incremental but goal-directed |
+| Darwin's natural selection insight | Very High | Very High | Both unexpected AND explanatory |
 
-Each breakthrough follows the same pattern: lots of previously inexplicable phenomena suddenly fall under a compact explanatory scheme. The "usefulness" emerges directly from this compression—you can now predict, control, and build upon what was previously chaotic.
+**What unexpectedness captures well**: When many previously separate observations suddenly fall under one short generative scheme, the compression gain signals genuine structural discovery. This pattern reliably identifies scientific breakthroughs.
+
+**What it misses**: Goal-relevance and actionability. A complete AI discovery system would use unexpectedness as a powerful first filter, then apply task-specific utility scoring to determine which insights deserve further development.
+
+The framework works because scientific and technological breakthroughs consistently show the same signature: they compress explanatory complexity. But for practical AI systems, this compression detector needs pairing with goal-conditioned evaluation.
 
 ## How the Framework Would Discover Natural Selection
 
@@ -110,43 +118,50 @@ The more adaptation puzzles in the database, the bigger the compression gain. Wi
 
 ### The Crucial Distinction: Insight vs. Meaningless Novelty
 
-Now we can precisely distinguish breakthrough insights from random noise:
+Now we can distinguish breakthrough insights from random combinations:
 
 | Type | Generation (Cv) | Description (C) | Unexpectedness (U) | Result |
 |------|-----------------|-----------------|-------------------|--------|
 | Darwin's Insight | Very High (prepared mind + vast observations) | Very Low (elegant causal rule) | Massive positive | Revolutionary theory |
-| Random Output: "Blue Sky Pizza Cheese" | Low (random article selection) | High (must specify these exact words) | Negative | Meaningless novelty |
+| Typical Random Output | Low (simple selection) | High (arbitrary specifics) | Usually negative | Meaningless novelty |
+| Semantically-loaded pairs | Variable | Variable | Sometimes positive | Rarely compressive |
 
-Why random combination has low insight value: Randomly selecting articles has low generation complexity (simple process), but high description complexity (you must specify these exact words). Since Cv < C, the unexpectedness U is negative. More importantly, these combinations don't compress any existing explanatory patterns—they create no insight value.
+**Why random combination usually fails**: Most random pairings have low generation complexity (simple selection process) but high description complexity (arbitrary word combinations). However, if concept pairs already carry semantic relationships—like "population growth" + "heredity"—even random combinations can occasionally have C < Cv.
 
-This is why random pairing fails: an AI system randomly connecting "population growth" with "pigeon breeding" lacks Darwin's prepared problem-solving context. Without systematic attention to explanatory gaps, this produces surface-level word association.
+**The real issue isn't randomness per se, but sampling bias**: What matters is whether the generation process is guided toward concepts that appear in explanatory gaps. Without systematic attention to where current theories struggle most, even semantically meaningful combinations produce surface-level associations rather than compression-creating insights.
+
+**Computational reality**: Random search could theoretically find breakthrough insights, but the search space is prohibitively large. Darwin's discovery required both the prepared mind (explanatory debt context) and guided attention to promising concept combinations.
 
 ## Making It Work: Guided Generation + Smart Selection
 
-The crucial insight from the Darwin case is that breakthrough discoveries require a prepared cognitive state—a mind loaded with explanatory debt around specific problem domains. Here's how to implement this in AI systems:
+The crucial insight from the Darwin case is that breakthrough discoveries require a prepared cognitive state—a mind loaded with explanatory debt around specific problem domains. But implementing this faces significant computational challenges.
 
-1. **Explanatory Debt Tracking**: Monitor compression ratios across different knowledge domains and flag areas where new observations consistently require new parameters.
+### The Hard Problems Remain Unsolved
 
-2. **Attention Biasing**: Weight concept retrieval by explanatory debt rather than recency or frequency. Increase sampling probability for concepts that appear in high-debt contexts.
+The framework points toward what we need, but the computational challenges are formidable:
 
-3. **Active Problem Construction**: Systematically identify what's currently hardest to explain and generate targeted questions rather than waiting for random combinations.
+**The Complexity Estimation Problem**: Computing Cv and C requires sophisticated world models that understand causal structure. How do you efficiently estimate "how complex would it be to generate this situation" across millions of concept combinations? This isn't just a scaling problem—it's a fundamental challenge in building systems that understand explanatory structure.
 
-The complete framework combines guided generation with principled selection:
+**The Explanatory Debt Tracking Problem**: Identifying where current theories struggle most requires systematically monitoring what observations require increasingly complex explanations. How do you build this kind of meta-cognitive awareness into AI systems at scale?
 
-1. Maintain a world model that tracks what's currently hard to explain (high explanatory debt)
-2. Bias generation toward promising combinations that appear in high-debt explanatory contexts
-3. Generate candidate connections at scale, but guided by compression potential
-4. Test for compression gain: Does this connection allow us to explain more with less?
-5. Keep only the insights that significantly reduce explanatory complexity
+**The Combinatorial Explosion Problem**: Even with perfect complexity estimation, the space of possible concept combinations grows exponentially. How do you search this space intelligently without either missing breakthrough insights or drowning in computational cost?
 
-Simplicity Theory works at both ends of the process—selecting which concepts to combine and filtering the resulting combinations for genuine insight value.
+**Open Questions**:
+- What's the minimum world-model sophistication needed for reliable complexity estimation?
+- Can explanatory debt be tracked efficiently in unbounded domains? 
+- How do you balance exploration vs. exploitation when the payoff structure is unknown?
+- What computational shortcuts exist that preserve the essential compression-detection capability?
+
+Current AI techniques—reflection-based agents, generative design systems, knowledge graph analysis—touch on pieces of this puzzle, but none solve the core scaling challenges.
 
 ## Conclusion
 
-Gwern's insight about AI needing background processing is brilliant, and he's honest about the computational challenges of random combination. But his brute-force approach leaves the core problems unsolved: how to intelligently target promising concept combinations and how to recognize genuine insights when they emerge.
+Gwern's insight about AI needing background processing is brilliant, and he's honest about the computational challenges of random combination. But his brute-force approach leaves core problems unsolved: how to intelligently target promising concept combinations and how to recognize genuine insights when they emerge.
 
-The solution requires both guided generation (systematically exploring concepts relevant to current explanatory problems) and principled selection (using Simplicity Theory to identify compression-creating connections). Without this dual approach, any "daydreaming" system becomes either an inefficient random search or a sophisticated pattern-matching system that can't recognize true insight.
+**The framework we've outlined provides direction, not solution**: Simplicity Theory offers both generation guidance (target explanatory gaps) and selection criteria (compression detection), but significant computational challenges remain. Estimating complexity terms at scale, tracking explanatory debt across large knowledge bases, and avoiding combinatorial explosion are still open problems.
 
-The distinction between mere novelty and genuine insight will separate truly intelligent systems from sophisticated text generators. Simplicity Theory gives us both the generation guidance and selection criteria we need to make AI daydreaming systems practical.
+**Next steps for validation**: Test this framework on constrained discovery tasks—like rediscovering Mendelian ratios from agricultural data or identifying periodic patterns in historical datasets. Success would demonstrate that compression-based insight detection can work when explanatory debt is systematically trackable.
 
-*This article itself emerged from motivated search—a goal-directed exploration of how to operationalize "interestingness" that connected Gwern's essay with the "Why we Talk" book by Dessalles.*
+**The bigger picture**: The distinction between mere novelty and genuine insight will ultimately separate truly intelligent systems from sophisticated text generators. What we've outlined here is a research blueprint rather than a finished solution—but one that builds on both information theory and cognitive science to make AI "daydreaming" more than brute-force search.
+
+*This article itself emerged from motivated search—connecting Gwern's computational proposal with Dessalles' cognitive framework to address a specific explanatory gap.*
