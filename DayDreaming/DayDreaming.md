@@ -66,11 +66,20 @@ We're using unexpectedness as our *initial filter* for insight potential, but it
 
 Consider these examples:
 
-| Event | Unexpectedness (U) | Usefulness | Why the Gap Exists |
-|-------|-------------------|------------|-------------------|
-| Meeting cousin on random flight | Very High | Very Low | Unexpected but not actionable |
-| Small engineering optimization | Very Low | Very High | Incremental but goal-directed |
-| Darwin's natural selection insight | Very High | Very High | Both unexpected AND explanatory |
+**Event: Meeting cousin on random flight**
+- Unexpectedness (U): Very High
+- Usefulness: Very Low
+- Why the Gap Exists: Unexpected but not actionable
+
+**Event: Small engineering optimization**
+- Unexpectedness (U): Very Low
+- Usefulness: Very High
+- Why the Gap Exists: Incremental but goal-directed
+
+**Event: Darwin's natural selection insight**
+- Unexpectedness (U): Very High
+- Usefulness: Very High
+- Why the Gap Exists: Both unexpected AND explanatory
 
 **What unexpectedness captures well**: When many previously separate observations suddenly fall under one short generative scheme, the compression gain signals genuine structural discovery. This pattern reliably identifies scientific breakthroughs.
 
@@ -120,11 +129,23 @@ The more adaptation puzzles in the database, the bigger the compression gain. Wi
 
 Now we can distinguish breakthrough insights from random combinations:
 
-| Type | Generation (Cv) | Description (C) | Unexpectedness (U) | Result |
-|------|-----------------|-----------------|-------------------|--------|
-| Darwin's Insight | Very High (prepared mind + vast observations) | Very Low (elegant causal rule) | Massive positive | Revolutionary theory |
-| Typical Random Output | Low (simple selection) | High (arbitrary specifics) | Usually negative | Meaningless novelty |
-| Semantically-loaded pairs | Variable | Variable | Sometimes positive | Rarely compressive |
+**Type: Darwin's Insight**
+- Generation (Cv): Very High (prepared mind + vast observations)
+- Description (C): Very Low (elegant causal rule)
+- Unexpectedness (U): Massive positive
+- Result: Revolutionary theory
+
+**Type: Typical Random Output**
+- Generation (Cv): Low (simple selection)
+- Description (C): High (arbitrary specifics)
+- Unexpectedness (U): Usually negative
+- Result: Meaningless novelty
+
+**Type: Semantically-loaded pairs**
+- Generation (Cv): Variable
+- Description (C): Variable
+- Unexpectedness (U): Sometimes positive
+- Result: Rarely compressive
 
 **Why random combination usually fails**: Most random pairings have low generation complexity (simple selection process) but high description complexity (arbitrary word combinations). However, if concept pairs already carry semantic relationships—like "population growth" + "heredity"—even random combinations can occasionally have C < Cv.
 
