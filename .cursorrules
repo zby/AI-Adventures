@@ -1,121 +1,32 @@
 # Blog Post Writing Rules for Technical Audience
 
 ## Core Principles
-- Write for technical readers but use simple, clear language
-- Apply the SUCCESS framework from "Made to Stick" to make content memorable
+- Write for technical readers using simple, clear language
+- Apply the SUCCESS framework: Simple, Unexpected, Concrete, Credible, Emotional, Stories
 - Prioritize clarity over complexity
-- Make technical concepts accessible without dumbing them down
 
-## SUCCESS Framework Application
+## Key Guidelines
 
-### Simple
-- **Find the core message**: Start each post with one main takeaway
-- **Lead with the most important point**: Put key insights in the first paragraph
-- **Use the inverted pyramid**: Most important info first, details follow
-- **One concept per paragraph**: Break complex ideas into digestible chunks
-- **Eliminate jargon**: Replace technical terms with simpler alternatives when possible
+### Structure & Style
+- **Lead with the main takeaway** in the first paragraph
+- **Use active voice** and conversational tone
+- **Include concrete examples** and code snippets
+- **Share personal experience** or cite credible sources
+- **Address real developer pain points**
+- **End with actionable next steps**
 
-### Unexpected
-- **Start with a surprising statistic or counterintuitive fact**
-- **Challenge common assumptions**: "Most developers think X, but actually Y"
-- **Use pattern interrupts**: Break expected flow with questions or bold statements
-- **Reveal gaps in knowledge**: "Here's what most tutorials don't tell you"
-- **Share failure stories**: What went wrong and why
+### Content Checklist
+- [ ] Hook in first 2 sentences
+- [ ] Clear learning objective
+- [ ] At least one concrete example
+- [ ] Practical, actionable advice
+- [ ] Simple language for complex concepts
+- [ ] Key takeaways summary
 
-### Concrete
-- **Use specific examples**: Show actual code snippets, not just concepts
-- **Include real numbers**: Performance metrics, exact error messages, specific versions
-- **Provide step-by-step instructions**: Make abstract concepts actionable
-- **Use analogies**: Compare technical concepts to familiar everyday objects
-- **Include screenshots/diagrams**: Visual proof of concepts
+### Common Pitfalls to Avoid
+- Burying the main insight
+- Being too abstract without examples
+- Assuming too much prior knowledge
+- Overcomplicating explanations
 
-### Credible
-- **Cite authoritative sources**: Link to official documentation, research papers
-- **Share personal experience**: "I've seen this in production at..."
-- **Include test results**: Benchmark data, before/after comparisons
-- **Acknowledge limitations**: Be honest about when solutions don't work
-- **Use social proof**: Reference what other respected developers/companies do
-
-### Emotional
-- **Connect to developer pain points**: Address real frustrations and challenges
-- **Show impact on users**: How technical decisions affect end-user experience
-- **Appeal to professional growth**: "This will make you a better developer"
-- **Use inclusive language**: "We've all been there" instead of "You probably..."
-- **Share the "why"**: Help readers understand motivation behind technical choices
-
-### Stories
-- **Use narrative structure**: Problem → Investigation → Solution → Results
-- **Include personal anecdotes**: Real debugging sessions, learning moments
-- **Case studies**: How specific companies solved similar problems
-- **Before/after scenarios**: Paint a picture of the transformation
-- **End with actionable next steps**: What should readers do now?
-
-## Writing Style Guidelines
-
-### Language & Tone
-- **Use active voice**: "We implemented X" not "X was implemented"
-- **Write conversationally**: Imagine explaining to a colleague over coffee
-- **Avoid unnecessary complexity**: If a simpler word works, use it
-- **Be direct**: Get to the point quickly
-- **Show, don't just tell**: Examples over explanations
-
-### Structure
-- **Compelling headlines**: Use numbers, questions, or bold claims
-- **Scannable format**: Use headers, bullet points, and short paragraphs
-- **Logical flow**: Each section should build on the previous one
-- **Clear transitions**: Help readers follow your thought process
-- **Strong conclusion**: Summarize key points and provide next steps
-
-### Technical Content
-- **Test all code examples**: Ensure they actually work
-- **Provide complete context**: Include necessary imports, setup steps
-- **Explain the "why"**: Don't just show how, explain reasoning
-- **Address edge cases**: What could go wrong? What are the limitations?
-- **Include alternative approaches**: Show different ways to solve the same problem
-
-## Content Checklist
-
-Before publishing, ensure your post has:
-
-### Opening
-- [ ] Hook that grabs attention in first 2 sentences
-- [ ] Clear statement of what reader will learn
-- [ ] Brief preview of the main points
-
-### Body
-- [ ] At least one concrete example or code snippet
-- [ ] Personal experience or credible source
-- [ ] Addresses a real problem developers face
-- [ ] Includes actionable advice
-- [ ] Uses simple language even for complex concepts
-
-### Closing
-- [ ] Summarizes key takeaways
-- [ ] Provides clear next steps
-- [ ] Invites engagement (questions, comments, discussion)
-
-## Common Pitfalls to Avoid
-
-- **Assuming too much knowledge**: Define terms that might be unfamiliar
-- **Writing for yourself**: Remember your audience's context and experience level
-- **Burying the lede**: Don't save the best insight for the end
-- **Being too abstract**: Always include concrete examples
-- **Ignoring the emotional component**: Technical posts can still connect emotionally
-- **Forgetting the story**: Structure content with narrative flow
-- **Overcomplicating**: Complex topics can be explained simply
-
-## Example Openings
-
-**Good**: "Last week, a single missing semicolon cost us 3 hours of debugging and nearly delayed our product launch. Here's how we turned this disaster into a systematic approach that prevents similar issues."
-
-**Bad**: "This article discusses various debugging methodologies and their implementation in modern development workflows."
-
-## Final Reminder
-
-Every blog post should leave the reader with:
-1. One clear, memorable takeaway
-2. Practical knowledge they can apply immediately  
-3. Confidence that they understand the topic better
-4. Enthusiasm to learn more or try the solution
-
-Remember: Technical accuracy + Simple language + Memorable presentation = Great technical blog post 
+**Remember**: Technical accuracy + Simple language + Memorable presentation = Great technical blog post 
