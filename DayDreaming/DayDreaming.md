@@ -30,6 +30,8 @@ If producing a situation ordinarily requires a long, contingent chain of circums
 
 **Observer-Dependent Complexity**: The key insight that makes ST computationally tractable is that complexity is always relative to the observer's descriptive resources and current knowledge. The lottery sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This observer-dependency transforms abstract algorithmic complexity into psychologically realistic cognitive computation, making ST a practical framework for real systems operating under resource constraints.
 
+**ST's Dual Discovery Functions**: Simplicity Theory serves two complementary roles in discovery systems. First, it identifies domains ripe for breakthrough by detecting **explanatory debt**—patterns that are easy to describe but require complex explanations under current theories (high U signals theoretical gaps). Second, it recognizes genuine insights by measuring **compression gain**—when new connections suddenly explain many separate observations under one short mechanism (high U signals breakthrough discoveries). Both functions use the same unexpectedness measure but applied to different targets: domain selection and insight recognition.
+
 ## What Made Darwin's Insight Special?
 
 To see how this framework applies, let's examine what exactly distinguishes a breakthrough insight from meaningless word association. 
@@ -62,44 +64,26 @@ Here's the puzzle: Why was this connection earth-shaking rather than just anothe
 
 Both involve connecting previously separate concepts. Both produce something novel. Yet one launched a scientific revolution while the other is meaningless noise.
 
-## How Simplicity Theory Recognizes Genuine Insights
+## Distinguishing Breakthrough Insights from Meaningless Novelty
 
-Simplicity Theory provides the answer by measuring something specific: **compression gain**. When Darwin connected population pressure to adaptation, he didn't just create another random association. He achieved massive compression of explanatory complexity.
+To see how ST's dual functions work in practice, consider what distinguishes Darwin's breakthrough from random word association:
 
-The key insight for AI: Simplicity Theory serves dual functions in discovery systems. First, it identifies domains ripe for breakthrough by detecting patterns with high unexpectedness—situations that are easy to describe but hard to explain under current theories. Second, it recognizes genuine insights by measuring compression gain when new connections suddenly explain many previously separate observations under one short generative scheme.
+**Domain targeting example**: Widespread organismal adaptation 
+- Easy to describe: "species fit their environments"
+- Hard to explain: requires separate divine creation events for each case
+- High unexpectedness → flags domain for investigation
 
-## The Dual Functions of Simplicity Theory in Discovery
+**Insight selection example**: Population theory + adaptation connection
+- Easy to describe: simple causal mechanism (variation + selection)
+- Hard to generate: required vast preparation (years of biological puzzles) + chance encounter with Malthus
+- High unexpectedness → signals genuine compression breakthrough
 
-We're proposing Simplicity Theory for both discovery targeting and insight selection, using the same unexpectedness measure for different purposes. This dual application leverages ST's core strength: detecting when simple descriptions require complex generation processes.
+**Non-scientific surprise**: Meeting cousin on random flight
+- Easy to describe: coincidental encounter  
+- Hard to generate: low probability event
+- High unexpectedness but no explanatory compression → just curiosity
 
-**The Two-Stage Reality**: A complete discovery system needs:
-1. **Domain targeting** (ST-based): "This pattern has high unexpectedness, flagging the domain as ripe for breakthrough"
-2. **Insight selection** (ST-based): "This connection has high unexpectedness, indicating genuine compression of explanatory complexity"
-
-Note that both stages use Simplicity Theory's unexpectedness measure, but applied to different targets: first to identify promising domains for investigation, then to recognize valuable insights within those domains.
-
-Consider these examples:
-
-**Domain: Widespread organismal adaptation**
-- Unexpectedness (U): Very High (easy to describe, hard to explain)
-- ST Function: Domain targeting (flags this area for investigation)
-- Result: Darwin focuses on adaptation puzzles
-
-**Insight: Population theory + adaptation connection**
-- Unexpectedness (U): Very High (simple mechanism, vast compression)
-- ST Function: Insight selection (recognizes breakthrough)
-- Result: Natural selection theory
-
-**Event: Meeting cousin on random flight**
-- Unexpectedness (U): Very High
-- ST Function: Neither (surprising but no explanatory compression)
-- Result: Curious coincidence, not scientific insight
-
-**How the dual ST functions work together**: Domain targeting identifies areas where current theories require complex explanations for simple patterns—signaling theoretical gaps. Insight selection recognizes when new connections achieve massive compression—signaling breakthrough discoveries. Both functions detect the same underlying signature: the gap between description simplicity and generation complexity.
-
-**The key advantage**: This approach directly targets the compression patterns that characterize genuine scientific discovery. Rather than relying on separate heuristics for "where to look" and "what to keep," both functions emerge from the same information-theoretic principle.
-
-**Remaining limitation**: While ST can identify promising domains and recognize valuable insights, it doesn't guarantee that insights will be practically useful for specific goals. A complete discovery system might need additional goal-conditioned evaluation, but ST provides the crucial foundation for distinguishing meaningful discoveries from random novelty.
+Recent computational work by [Sileno and Dessalles](https://arxiv.org/abs/2307.15453) suggests these complexity calculations might be tractable through logic programming, moving ST from pure theory toward implementable discovery systems.
 
 ## How the Framework Would Discover Natural Selection
 
@@ -161,79 +145,21 @@ Now we can distinguish breakthrough insights from random combinations:
 
 **Computational reality**: Random search could theoretically find breakthrough insights, but the search space is prohibitively large. Darwin's discovery required both the prepared mind (explanatory debt context) and guided attention to promising concept combinations.
 
-## From Theory to Implementation: Early Experiments with CompLog
+## Implementation Reality: Progress and Remaining Challenges
 
-While our analysis demonstrates how Simplicity Theory could guide AI discovery systems, a crucial question remains: can these complexity calculations actually be implemented at scale? Recent work by Sileno and Dessalles offers preliminary evidence that this might be possible.
+**Computational Progress**: The [CompLog framework](https://arxiv.org/abs/2307.15453) demonstrates that ST's complexity calculations can be implemented through logic programming, computing cognitively realistic approximations rather than intractable full algorithmic complexity. This suggests our framework might be implementable without omniscient world models.
 
-Their [CompLog framework](https://arxiv.org/abs/2307.15453) represents an early experimental attempt to implement Simplicity Theory principles for computational systems. Rather than remaining purely theoretical, CompLog uses Answer Set Programming (ASP)—a form of logic programming that can systematically search through possible solutions to complex problems—to compute approximations of the complexity measures that could drive insight detection.
+**Key Bottlenecks**: However, significant challenges remain:
 
-### Key Implementation Breakthroughs
+- **Knowledge Structuring**: CompLog requires structured logical predicates, not raw text. Converting "Darwin observed finch beak variations across islands" into logical relationships that ST can analyze remains unsolved.
 
-**Tractable Complexity Calculation**: CompLog solves the core computational challenge by implementing complexity estimation through systematic logical searches. Instead of the intractable full Kolmogorov complexity, the system computes cognitively realistic approximations that capture what human observers actually detect.
+- **Scaling**: How do you maintain cognitive realism while handling millions of concept combinations across vast knowledge bases?
 
-**Explanatory Debt Tracking**: The framework distinguishes between **causal** and **descriptive** relations between predicates (basic logical statements about objects and their properties), weighted by complexity. This directly addresses our "explanatory debt tracking problem"—the system can systematically monitor which observations require increasingly complex causal explanations versus simple descriptive patterns.
+- **Cross-Domain Integration**: How do you enable insights when different fields have different complexity patterns?
 
-**Retrospective and Predictive Analysis**: CompLog computes both retrospective ("Why is this observation surprising?") and predictive ("What should we expect to observe?") measures of unexpectedness. This maps directly to the prepared mind/insight detection cycle we described for Darwin's discovery.
+- **Search Strategy**: Even with efficient complexity calculation, the space of possible combinations grows exponentially.
 
-**Real Applications**: The system demonstrates concrete capabilities like generating relevant descriptions and handling logical operations (disjunction, negation)—exactly the kind of sophisticated reasoning needed for scientific insight.
-
-### What This Suggests for AI Discovery Systems
-
-CompLog's preliminary results suggest our proposal might be more than speculative. Where we identified computational challenges, CompLog offers potential approaches:
-
-- **"Estimating complexity terms at scale"** → ASP-based complexity computation (in constrained domains)
-- **"Tracking explanatory debt across large knowledge bases"** → Weighted causal/descriptive relations (for structured knowledge)
-- **"Avoiding combinatorial explosion"** → Cognitively realistic approximations rather than full search (within limitations)
-
-The experiment suggests that Simplicity Theory might be implementable without requiring omniscient world models or exponential search spaces. By using human-like cognitive approximations rather than perfect algorithmic complexity, such systems could potentially become computationally tractable while preserving essential compression-detection capabilities.
-
-### The Knowledge Representation Bottleneck
-
-However, CompLog's power comes with a significant constraint: **it requires carefully structured predicate relationships, not raw text processing**. The system works with explicit causal and descriptive relations between predicates, weighted by complexity values. You can't simply feed it Wikipedia articles and expect Darwin-like insights to emerge.
-
-This limitation is actually quite significant for real-world implementation:
-
-**What CompLog needs**: 
-```
-3 :: dog. 3 :: cat. 3 :: bird.
-4 :: eagle. 4 :: tiger. 4 :: pigeon.
-causal_relation(population_pressure, competition, 7).
-descriptive_relation(finch, bird, 2).
-```
-
-**What it can't handle**: Raw text like "Darwin observed that finch beaks varied across the Galápagos islands, with thick beaks on seed-rich islands and thin beaks where nectar-feeding was common."
-
-This means the "prepared mind" problem—accumulating explanatory debt around specific domains—still requires sophisticated natural language processing to convert observations into the structured predicates that CompLog can work with. The framework solves the complexity calculation problem but doesn't address the knowledge representation challenge.
-
-**Implication for AI Discovery**: A complete system would need two major components:
-1. **Text-to-Logic Translation**: Converting natural language observations into structured logical relationships that the system can analyze
-2. **CompLog-based Insight Detection**: Using ST to identify compression opportunities in the structured knowledge
-
-The first component remains an open challenge, but CompLog demonstrates that the second is computationally feasible.
-
-**Validation Path**: CompLog provides a starting point for testing aspects of our framework on constrained discovery tasks—potentially rediscovering simple patterns like Mendelian ratios from structured agricultural data, or identifying periodic regularities in historical datasets. While far from the Darwin-like insights we envision, these experiments could help validate whether compression-detection principles work in practice and identify the key bottlenecks for scaling up.
-
-## Making It Work: Guided Generation + Smart Selection
-
-The crucial insight from the Darwin case is that breakthrough discoveries require a prepared cognitive state—a mind loaded with explanatory debt around specific problem domains. But implementing this faces significant computational challenges.
-
-### Remaining Implementation Challenges
-
-While CompLog solves core complexity calculation problems, significant challenges remain for full-scale discovery systems:
-
-**The Scaling Problem**: While CompLog demonstrates tractable complexity estimation for constrained domains, scaling to millions of concept combinations across vast knowledge bases remains challenging. How do you maintain the cognitive realism that makes ST work while handling the scope of real scientific discovery?
-
-**The Domain Integration Problem**: CompLog handles logical relations well, but integrating across heterogeneous domains (biological, physical, mathematical) requires more sophisticated world models. How do you enable cross-domain insights when each field has different complexity patterns?
-
-**The Search Strategy Problem**: Even with efficient complexity calculation, the space of possible concept combinations grows exponentially. How do you search this space intelligently without either missing breakthrough insights or drowning in computational cost?
-
-**Open Questions**:
-- How can CompLog's ASP-based approach scale to real scientific knowledge bases?
-- Can the causal/descriptive distinction be maintained across domain boundaries?
-- How do you balance exploration vs. exploitation when the payoff structure is unknown?
-- What hybrid architectures best combine ST-based insight detection with domain-specific reasoning?
-
-CompLog provides the computational foundation, but translating this to full-scale AI discovery systems requires integrating it with existing AI techniques—reflection-based agents, generative design systems, knowledge graph analysis.
+A complete discovery system needs both text-to-logic translation and ST-based insight detection—CompLog solves the second but not the first.
 
 ## Alternative Path: Bayesian Model Selection
 
@@ -253,7 +179,7 @@ Gwern's insight about AI needing background processing is brilliant, and he's ho
 
 **Why Simplicity Theory matters specifically**: While other approaches like Bayesian inference excel at systematic learning from data streams, ST offers something unique—a formal framework for detecting the salience of individual events and breakthrough moments. This makes it particularly suited to Gwern's original challenge: how do you recognize when a random connection has produced genuine insight rather than meaningless novelty?
 
-**Ready for initial experiments**: With CompLog providing an experimental foundation, we can begin testing simplified versions of this framework on constrained discovery tasks—perhaps rediscovering basic patterns in structured datasets or testing compression-detection on prepared examples. While we're still far from Darwin-like insights, the framework has moved from pure theory toward something that might eventually be empirically testable.
+**Ready for initial experiments**: With computational approaches like CompLog demonstrating feasibility, we can begin testing simplified versions of this framework on constrained discovery tasks. While we're still far from Darwin-like insights, the framework has moved from pure theory toward something potentially testable.
 
 **The bigger picture**: The distinction between mere novelty and genuine insight will ultimately separate truly intelligent systems from sophisticated text generators. What we've outlined here combines theoretical framework with practical implementation—building on both information theory and cognitive science to make AI "daydreaming" a systematic discovery process rather than brute-force search.
 
