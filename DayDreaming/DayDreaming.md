@@ -4,7 +4,7 @@ Picture yourself stuck on a coding problem for hours. You've tried every obvious
 
 [Gwern's proposal for AI "daydreaming loops"](https://gwern.net/ai-daydreaming) tries to solve exactly this: building AI systems that make creative connections by randomly combining facts and filtering for useful insights. But randomly searching through all possible concept combinations would be computationally expensive—we need something more efficient.
 
-Gwern's solution has two key gaps: while coherence is checkable and novelty is trivial from an information-theoretic perspective, usefulness remains completely undefined, and the completely random selection of concepts to combine is computationally inefficient.
+Gwern's solution has two key gaps: while coherence is checkable and novelty can be measured information-theoretically, usefulness remains completely undefined, and the completely random selection of concepts to combine is computationally inefficient.
 
 [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) offers partial solutions to these challenges: it provides a principled framework for distinguishing breakthrough insights from meaningless novelty (substantially improving the filtering problem), while offering limited guidance for identifying promising research domains—though it doesn't solve the core challenge of systematically generating concept combinations within those domains.
 
@@ -15,7 +15,7 @@ To see why these gaps matter, consider what Gwern's proposal would actually prod
 - Random combination: Randomly select articles about "sky color" and "pizza ingredients" → "Blue sky pizza cheese"
 - Guided search: Darwin actively seeking mechanisms to explain adaptation, then recognizing Malthus' relevance
 
-Gwern acknowledges this inefficiency problem—he knows random combination would generate millions of meaningless outputs for every valuable connection. His proposal essentially accepts massive computational waste as the price for comprehensive exploration. But even acknowledging the inefficiency, his brute-force approach leaves the core challenge unsolved: **concept combination targeting**—systematically identifying which concepts are worth combining, whether within domains or across them.
+Gwern acknowledges this inefficiency problem—he knows random combination would generate millions of meaningless outputs for every valuable connection. His proposal essentially accepts massive computational waste as the price for comprehensive exploration. But even acknowledging the inefficiency, his brute-force approach leaves the core challenge unsolved: **targeting which concepts to combine**—systematically identifying which concepts are worth combining, whether within domains or across them.
 
 While Simplicity Theory helps with insight recognition, this fundamental generation problem remains largely unsolved.
 
@@ -36,13 +36,13 @@ But unexpectedness alone doesn't determine what we find interesting. ST recogniz
 
 This dual-component structure means high-value research emerges from either technical surprises (high U) or critical domains (high emotional intensity), and often both simultaneously in mature high-stakes fields where economic filtering ensures remaining problems have high complexity.
 
-**Observer-Dependent Complexity**: The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge. The lottery sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical cognitive computation for real systems.
+**Observer-Dependent Complexity**: The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge. The lottery sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical thinking for real systems.
 
 Simplicity Theory excels at insight recognition but provides only limited guidance for concept generation. Here's how it works:
 
-**Explanatory Debt Detection**: ST can identify areas where simple patterns require complex explanations, flagging research directions that may be ripe for theoretical breakthrough. When you can efficiently describe patterns but explaining *why* those patterns exist requires many separate, complex causal mechanisms, you have **explanatory debt**. High explanatory debt signals opportunity—when you have simple pattern descriptions but expensive causal explanations, you're ripe for a theoretical breakthrough.
+**Detecting Explanatory Debt**: ST can identify areas where simple patterns require complex explanations, flagging research directions that may be ripe for theoretical breakthrough. When you can efficiently describe patterns but explaining *why* those patterns exist requires many separate, complex causal mechanisms, you have **explanatory debt**. High explanatory debt signals opportunity—when you have simple pattern descriptions but expensive causal explanations, you're ripe for a theoretical breakthrough.
 
-**Insight Recognition**: ST recognizes genuine insights by measuring the unexpectedness of *proposed connections or theories*. When we apply the unexpectedness score to candidate insights:
+**Recognizing Insights**: ST recognizes genuine insights by measuring the unexpectedness of *proposed connections or theories*. When we apply the unexpectedness score to candidate insights:
 - C (description complexity): How simply can the insight itself be stated? ("variation + selection → adaptation") 
 - Cv (generation complexity): How much intellectual preparation and fortunate circumstances were required to produce this connection?
 - High unexpectedness scores signal **compression gain**—when many separate observations collapse into a single explanatory mechanism, creating both simplicity and power
@@ -93,11 +93,11 @@ So what does this mean for building real AI discovery systems?
 
 ## Where ST Actually Helps: Recognition Over Generation
 
-Simplicity Theory addresses one of Gwern's challenges definitively while offering limited help with the other. For **insight recognition**, ST provides a concrete framework through compression gain detection. This definitively solves Gwern's "usefulness" filter problem.
+Simplicity Theory addresses one of Gwern's challenges definitively while offering limited help with the other. For **insight recognition**, ST provides a concrete framework through detecting compression gains. This definitively solves Gwern's "usefulness" filter problem.
 
-For **concept combination targeting**, ST offers minimal guidance. While the **explanatory debt** framework can flag research areas where simple patterns require complex explanations, it doesn't solve the fundamental challenge of systematically identifying which specific concepts are worth combining. Whether the concepts come from the same domain or different domains, ST excels at evaluating proposed combinations but provides little direction for generating them.
+For **targeting which concepts to combine**, ST offers minimal guidance. While the **explanatory debt** framework can flag research areas where simple patterns require complex explanations, it doesn't solve the fundamental challenge of systematically identifying which specific concepts are worth combining. Whether the concepts come from the same domain or different domains, ST excels at evaluating proposed combinations but provides little direction for generating them.
 
-The insight recognition capabilities appear robust. [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates that compression gain calculations are tractable through logic programming.
+The ability to recognize insights appears robust. [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates that compression gain calculations are tractable through logic programming.
 
 But the generation problem persists—ST excels at evaluating proposed connections but offers minimal guidance for systematically producing them.
 
@@ -105,21 +105,21 @@ But the generation problem persists—ST excels at evaluating proposed connectio
 
 Current AI systems could implement three practical components of ST-based discovery:
 
-**Explanatory Debt Detection**: Scan research literature to identify patterns that have simple descriptions but require complex, piecemeal explanations. Flag these as high-potential research areas.
+**Detecting Explanatory Debt**: Scan research literature to identify patterns that have simple descriptions but require complex, piecemeal explanations. Flag these as high-potential research areas.
 
-**Compression Gain Evaluation**: Use the [CompLog framework](https://arxiv.org/abs/2307.15453) to test proposed connections for genuine insight value by calculating compression ratios.
+**Evaluating Compression Gains**: Use the [CompLog framework](https://arxiv.org/abs/2307.15453) to test proposed connections for genuine insight value by calculating compression ratios.
 
-**Hybrid Discovery Systems**: Combine human concept generation with AI breakthrough recognition. Researchers propose connections, AI evaluates them for compression gain and flags the most promising candidates for further investigation.
+**Hybrid Discovery Systems**: Combine human concept generation with AI systems that recognize breakthroughs. Researchers propose connections, AI evaluates them for compression gain and flags the most promising candidates for further investigation.
 
-What remains beyond current capabilities is the core challenge: systematically generating which concepts to combine in the first place. This requires semantic understanding, abstraction formation, and cross-domain reasoning that represent fundamental aspects of general intelligence.
+What remains beyond current capabilities is the core challenge: systematically generating which concepts to combine in the first place. This requires understanding meaning, abstraction formation, and connecting different fields—core parts of intelligence itself.
 
 ## Conclusion
 
-Gwern's insight about AI needing background processing is brilliant, and he's honest about the computational challenges of random combination. His brute-force approach leaves the core challenge unsolved: **concept combination targeting**—systematically identifying which concepts are worth combining, whether within domains or across them.
+Gwern's insight about AI needing background processing is brilliant, and he's honest about the computational challenges of random combination. His brute-force approach leaves the core challenge unsolved: **targeting which concepts to combine**—systematically identifying which concepts are worth combining, whether within domains or across them.
 
 Simplicity Theory makes significant progress on insight recognition while offering limited help with concept generation. The framework's compression gain detection provides a principled solution to Gwern's undefined "usefulness" filter—we can computationally distinguish breakthrough insights from meaningless associations. CompLog demonstrates this recognition capability is actually implementable.
 
-However, the fundamental challenge remains: systematically generating meaningful concept combinations. ST excels at evaluation but provides minimal guidance for generation. The deepest requirements—semantic clustering, abstraction formation, and cross-domain transfer—represent the same capabilities that define general intelligence itself.
+However, the fundamental challenge remains: systematically generating meaningful concept combinations. ST excels at evaluation but provides minimal guidance for generation. The deepest requirements—semantic clustering, abstraction formation, and connecting different fields—represent the same capabilities that define general intelligence itself.
 
 While other approaches like Bayesian inference excel at systematic learning from data streams, ST offers something complementary—a formal framework for detecting the salience of individual breakthrough moments. This makes ST particularly suited to one part of Gwern's original challenge: recognizing when a proposed connection represents genuine insight rather than meaningless novelty.
 
