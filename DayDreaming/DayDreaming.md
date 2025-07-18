@@ -17,7 +17,7 @@ To see why Simplicity Theory improves but doesn't solve the search problem, cons
 
 Simplicity Theory provides a crucial improvement over Gwern's brute-force approach. While Gwern accepts massive computational waste by randomly combining all concepts, ST can first identify which concepts form puzzles, dramatically narrowing the search space. Darwin's success demonstrates this: he recognized his adaptation observations formed a puzzle, then targeted his search for the missing mechanism.
 
-But here's the key limitation: **even with puzzle identification, the search for missing pieces remains exponential**. Once you know you have a puzzle, you still face the combinatorial challenge of determining which additional concepts might complete it. ST transforms blind search into targeted search—a significant improvement—but doesn't eliminate the fundamental exponential scaling problem.
+But here's the key limitation: **the search challenge scales exponentially with the number of complementary concepts needed**. Single-concept breakthroughs like Darwin's (puzzle pieces + Malthus) become quite manageable. Multi-concept insights requiring many simultaneous connections remain exponentially challenging.
 
 ## The Framework: Simplicity Theory
 
