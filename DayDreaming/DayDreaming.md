@@ -6,7 +6,7 @@ Picture yourself stuck on a problem for weeks. You've tried everything, then whi
 
 Gwern's solution has two key gaps: while coherence is checkable and novelty can be measured information-theoretically, usefulness remains completely undefined, and the completely random selection of concepts to combine is computationally inefficient.
 
-[Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) offers partial solutions to these challenges: it provides a principled framework for distinguishing breakthrough insights from meaningless novelty (substantially improving the filtering problem), while offering limited guidance for identifying promising research domains—though it doesn't solve the core challenge of systematically generating concept combinations within those domains.
+[Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) offers partial solutions to these challenges: it provides a principled framework for distinguishing breakthrough insights from meaningless novelty (substantially improving the filtering problem), while offering limited guidance for identifying promising research domains—though it doesn't solve the core challenge of systematically generating meaningful concept combinations, whether within domains or across them.
 
 ## The Core Problem: Selection and Generation Challenges
 
@@ -19,7 +19,7 @@ Gwern acknowledges this inefficiency problem—he knows random combination would
 
 While Simplicity Theory helps with insight recognition, this fundamental generation problem remains largely unsolved.
 
-## The Framework: Simplicity Theory's Interest Model
+## The Framework: Simplicity Theory
 
 [Jean-Louis Dessalles' Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) provides a mathematical approach to recognizing breakthrough insights through an **unexpectedness score**: **U = Cv - C**
 
@@ -41,11 +41,7 @@ ST recognizes genuine insights by measuring how much **compression gain** they p
 
 High unexpectedness scores signal **compression gain**—when many separate observations collapse into a single explanatory mechanism, creating both simplicity and power. This is what distinguishes breakthrough insights from meaningless novelty.
 
-### How to Detect Opportunities: Explanatory Debt
-
-ST can identify research areas ripe for breakthrough by detecting **explanatory debt**—situations where simple patterns require complex explanations. When you can efficiently describe patterns but explaining *why* those patterns exist requires many separate, complex causal mechanisms, you have high explanatory debt.
-
-High explanatory debt signals opportunity: areas where a theoretical breakthrough could collapse many separate explanations into a single mechanism. ST can tell you "adaptation research is ready for a breakthrough" but cannot tell you "combine population theory with heredity."
+We can identify opportunities for compression gain by looking for situations where simple patterns require complex explanations. When you can efficiently describe patterns but explaining *why* those patterns exist requires many separate, complex causal mechanisms, that signals potential for breakthrough—areas where a theoretical insight could collapse many separate explanations into a single mechanism. ST can tell you "adaptation research is ready for a breakthrough" but cannot tell you "combine population theory with heredity."
 
 ### Observer-Dependent Complexity: Making ST Practical
 
@@ -54,11 +50,11 @@ The key insight that makes ST computationally tractable is that complexity is al
 ### What ST Can and Cannot Do
 
 **What ST Can Do**:
-- **Research Area Assessment**: Identify fields with high explanatory debt that are ripe for breakthrough
+- **Research Area Assessment**: Identify fields ripe for breakthrough by detecting opportunities for compression gain
 - **Insight Recognition**: Evaluate proposed concept combinations for compression gain, distinguishing breakthrough insights from meaningless associations
 
 **What ST Cannot Do**:
-- **Specific Concept Generation**: Within a promising research area, ST cannot suggest which particular concepts should be combined. It doesn't tell us that "population pressure" and "heredity" are worth combining rather than "population pressure" and "cloud formation."
+- **Systematic Concept Generation**: ST cannot systematically identify which specific concepts should be combined, whether within a domain or across domains. It doesn't tell us that "population pressure" (economics) and "heredity" (biology) are worth combining rather than "population pressure" and "cloud formation."
 
 This fundamental limitation means the crucial middle step—systematically generating specific concept combinations within promising research areas—remains largely unsolved.
 
@@ -66,13 +62,13 @@ This fundamental limitation means the crucial middle step—systematically gener
 
 To see how Simplicity Theory's evaluation framework works in practice, let's examine what exactly distinguishes a breakthrough insight from meaningless word association. Note that this is a post-hoc analysis—we're using ST to understand why Darwin's connection was valuable after the fact.
 
-The key insight is recognizing when you can efficiently describe patterns but lack causal mechanisms to explain why those patterns exist—this is **explanatory debt** in action.
+The key insight is recognizing when you can efficiently describe patterns but lack causal mechanisms to explain why those patterns exist—this signals opportunities for compression gain.
 
 Consider what happened in October 1838. Darwin had been wrestling with the mystery of adaptation for years, accumulating observations that defied easy explanation. But crucially, he had first recognized that adaptation itself was deeply unexpected under existing theories.
 
 The widespread fact that organisms are exquisitely fitted to their environments is easy to describe but extraordinarily difficult to explain without evolution. You can summarize the pattern in a few words: "species are well-adapted to their ecological niches." 
 
-But explaining *why* this pattern exists requires invoking separate causal mechanisms for each case—divine creation events, Lamarckian use/disuse, climate-driven modifications. This creates massive **explanatory debt**, flagging this research direction as ripe for theoretical breakthrough.
+But explaining *why* this pattern exists requires invoking separate causal mechanisms for each case—divine creation events, Lamarckian use/disuse, climate-driven modifications. This signals massive opportunity for compression gain, flagging this research direction as ripe for theoretical breakthrough.
 
 Darwin had accumulated observations that all pointed to this same puzzling pattern:
 
@@ -106,7 +102,7 @@ So what does this mean for building real AI discovery systems?
 
 Simplicity Theory addresses one of Gwern's challenges definitively while offering limited help with the other. For **insight recognition**, ST provides a concrete framework through detecting compression gains. This definitively solves Gwern's "usefulness" filter problem.
 
-For **targeting which concepts to combine**, ST offers minimal guidance. While the **explanatory debt** framework can flag research areas where simple patterns require complex explanations, it doesn't solve the fundamental challenge of systematically identifying which specific concepts are worth combining. Whether the concepts come from the same domain or different domains, ST excels at evaluating proposed combinations but provides little direction for generating them.
+For **targeting which concepts to combine**, ST offers minimal guidance. While ST can flag research areas where simple patterns require complex explanations (signaling compression opportunities), it doesn't solve the fundamental challenge of systematically identifying which specific concepts are worth combining. Whether the concepts come from the same domain or different domains, ST excels at evaluating proposed combinations but provides little direction for generating them.
 
 The ability to recognize insights appears robust. [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates that compression gain calculations are tractable through logic programming.
 
@@ -118,9 +114,9 @@ Can we build AI that discovers like Darwin did? The question cuts to the heart o
 
 Current AI systems could implement three practical components of ST-based discovery:
 
-**Detecting Explanatory Debt**: Scan research literature to identify patterns that have simple descriptions but require complex, piecemeal explanations. Flag these as high-potential research areas.
+**Detecting Compression Opportunities**: Scan research literature to identify patterns that have simple descriptions but require complex, piecemeal explanations. Flag these as high-potential research areas.
 
-> If we could detect when a field has accumulated enough "explanatory debt" to be ripe for breakthrough, which domains would top your list?
+> If we could detect when a field has simple patterns requiring complex explanations—signaling compression opportunities—which domains would top your list?
 
 **Evaluating Compression Gains**: Use the [CompLog framework](https://arxiv.org/abs/2307.15453) to test proposed connections for genuine insight value by calculating compression ratios.
 
