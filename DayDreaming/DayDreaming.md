@@ -104,32 +104,26 @@ Simplicity Theory addresses Gwern's two challenges very differently—definitive
 
 Can we build AI that discovers like Darwin did? The question cuts to the heart of whether computational systems can replicate the leap from scattered observations to transformative insight.
 
-Current AI systems could implement three practical components of ST-based discovery:
+**What Exists Now**: The [CompLog framework](https://arxiv.org/abs/2307.15453) provides a working implementation for evaluating proposed connections through compression ratios, moving ST from pure theory toward testable systems.
 
-**Detecting Compression Opportunities**: Scan research literature to identify patterns that have simple descriptions but require complex, piecemeal explanations. Flag these as high-potential conceptual puzzles.
+**Open Research Directions**: Several promising but unvalidated approaches could make ST-based discovery more practical:
+
+*Detecting Compression Opportunities*: Identifying patterns with simple descriptions but complex explanations, flagging high-potential conceptual puzzles. This could work across contexts—scanning research literature for breakthrough opportunities or monitoring personal knowledge management systems (Obsidian, Roam Research, Zettelkasten) to spot when accumulated notes form puzzles ripe for insight. Such systems could combine human concept generation with AI insight recognition—researchers propose connections while AI evaluates compression gain.
+
+A more accessible way to implement this evaluation could be *LLM-Based Unexpectedness Estimation*: using language models to estimate U = Cv - C by prompting for generation complexity ("Given what we knew in 1838, how difficult would Darwin's connection be to generate?") versus description complexity ("How simply can this be stated?"). This could be more accessible than CompLog's formal logic while remaining mathematically grounded, though it's unclear whether LLMs would capture the relationships ST requires.
 
 > If we could detect when concepts form puzzles where simple patterns require complex explanations—signaling compression opportunities—which conceptual puzzles would be most ripe for breakthrough?
-
-**Evaluating Compression Gains**: Use the [CompLog framework](https://arxiv.org/abs/2307.15453) to test proposed connections for genuine insight value by calculating compression ratios.
-
-**Hybrid Discovery Systems**: Combine human concept generation with AI systems that recognize breakthroughs. Researchers propose connections, AI evaluates them for compression gain and flags the most promising candidates for further investigation.
-
-This hybrid approach could integrate naturally with existing knowledge management tools. Imagine enhanced note-taking systems—think Obsidian, Roam Research, or Zettelkasten methods—where AI continuously monitors your growing knowledge graph for potential connections. As you add research papers, meeting notes, and random thoughts, the system identifies when two previously unconnected concepts might create compression gain if combined.
 
 What remains beyond current capabilities is the core challenge: systematically generating which concepts to combine in the first place. This requires understanding meaning, abstraction formation, and connecting different fields—core parts of intelligence itself.
 
 ## Conclusion
 
-Gwern's insight about AI needing background processing is brilliant, and he's honest about the computational challenges of random combination. His brute-force approach leaves the core challenge unsolved: **navigating the exponential search space**—systematically exploring which concept combinations are worth pursuing.
+We have some promising theory. Computational approaches are emerging. But lots of experimentation is required to know if this actually works in practice.
 
-Simplicity Theory makes significant progress on insight recognition while offering limited help with concept generation. The framework's compression gain detection provides a principled solution to Gwern's undefined "usefulness" filter—we can computationally distinguish breakthrough insights from meaningless associations. CompLog demonstrates this recognition capability is actually implementable.
+If it does? Picture an AI scanning every paper on arXiv in real-time, flagging compression opportunities as they emerge. Your Zettelkasten could highlight when scattered notes form unexpectedness patterns. Browser extensions that show unexpectedness ratings for research papers you read.
 
-However, the fundamental challenge remains: systematically generating meaningful concept combinations. ST excels at evaluation but provides minimal guidance for generation. The deepest requirements—semantic clustering, abstraction formation, and connecting different fields—represent the same capabilities that define general intelligence itself.
+Email filters that prioritize high-compression insights. Social media algorithms that surface genuinely unexpected connections instead of engagement bait. Personal knowledge systems that learn your thinking patterns and flag when you're circling around puzzle pieces.
 
-While other approaches like Bayesian inference excel at systematic learning from data streams, ST offers something complementary—a formal framework for detecting the salience of individual breakthrough moments. This makes ST particularly suited to one part of Gwern's original challenge: recognizing when a proposed connection represents genuine insight rather than meaningless novelty.
+Every research tool becomes a discovery engine. The possibilities are endless—if we can make it work.
 
-With computational approaches like CompLog demonstrating feasibility for the evaluation component, we can begin testing hybrid systems where humans generate concepts and AI recognizes breakthroughs. While we're still far from fully automated discovery systems, ST moves us from having no principled framework for insight recognition to having a computationally tractable one. The distinction between mere novelty and genuine insight will ultimately separate truly intelligent systems from sophisticated text generators—and ST provides concrete progress on that fundamental challenge.
-
-> We're not just building better AI—we're reverse-engineering how breakthrough insights actually work.
-
-**Meta-insight**: Let's apply our own framework here. The core claim—"ST solves insight recognition but not concept generation"—is simple to state (low C) but required analyzing the logical gaps in complex theoretical frameworks (reasonably high Cv). According to our own framework, this should register as a useful clarification!
+What will you build?
