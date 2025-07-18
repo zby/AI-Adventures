@@ -124,6 +124,8 @@ If it does? Picture an AI scanning every paper on arXiv in real-time, flagging c
 
 Email filters that prioritize high-compression insights. Social media algorithms that surface genuinely unexpected connections instead of engagement bait. Personal knowledge systems that learn your thinking patterns and flag when you're circling around puzzle pieces.
 
+ST could also transform the reinforcement learning phase of LLM training. Mathematical problems are ideal for this approach because they provide objectively verifiable answers—you can automatically check if "42" is correct without human judgment. But developing insight generation capabilities has no equivalent: we typically rely on expensive human preference ratings to distinguish genuinely insightful responses from sophisticated-sounding nonsense. ST's compression gain metrics could fill this gap, providing automatic verification of conceptual breakthroughs and training LLMs to generate genuine insights rather than just fluent text.
+
 Every research tool becomes a discovery engine. The possibilities are endless—if we can make it work.
 
 What will you build?
