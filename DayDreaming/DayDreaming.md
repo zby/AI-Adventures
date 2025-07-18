@@ -45,19 +45,22 @@ High unexpectedness scores signal **compression gain**—when many separate obse
 
 ST can identify research areas ripe for breakthrough by detecting **explanatory debt**—situations where simple patterns require complex explanations. When you can efficiently describe patterns but explaining *why* those patterns exist requires many separate, complex causal mechanisms, you have high explanatory debt.
 
-High explanatory debt signals opportunity: areas where a theoretical breakthrough could collapse many separate explanations into a single mechanism. This is how ST flags promising research directions without generating specific concept combinations.
+High explanatory debt signals opportunity: areas where a theoretical breakthrough could collapse many separate explanations into a single mechanism. ST can tell you "adaptation research is ready for a breakthrough" but cannot tell you "combine population theory with heredity."
 
 ### Observer-Dependent Complexity: Making ST Practical
 
-The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge. The lottery sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical calculations for real systems.
+The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge. The number sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical calculations for real systems.
 
 ### What ST Can and Cannot Do
 
-**ST's Strength - Insight Recognition**: ST excels at evaluating proposed connections. We can use unexpectedness measurements to recognize genuine breakthroughs when they emerge—distinguishing compression gain from meaningless association.
+**What ST Can Do**:
+- **Research Area Assessment**: Identify fields with high explanatory debt that are ripe for breakthrough
+- **Insight Recognition**: Evaluate proposed concept combinations for compression gain, distinguishing breakthrough insights from meaningless associations
 
-**ST's Limitation - Concept Generation**: ST provides minimal guidance for systematically generating meaningful concept combinations. It can flag research areas with explanatory debt, but doesn't tell us that "population pressure" and "heredity" are worth combining rather than "population pressure" and "cloud formation." It can only evaluate such combinations after they're proposed.
+**What ST Cannot Do**:
+- **Specific Concept Generation**: Within a promising research area, ST cannot suggest which particular concepts should be combined. It doesn't tell us that "population pressure" and "heredity" are worth combining rather than "population pressure" and "cloud formation."
 
-This fundamental limitation means the crucial middle step—systematically generating promising concept combinations—remains largely unsolved.
+This fundamental limitation means the crucial middle step—systematically generating specific concept combinations within promising research areas—remains largely unsolved.
 
 ## What Made Darwin's Insight Special: How ST Explains Breakthrough Discovery
 
