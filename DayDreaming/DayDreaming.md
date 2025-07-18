@@ -21,39 +21,43 @@ While Simplicity Theory helps with insight recognition, this fundamental generat
 
 ## The Framework: Simplicity Theory's Interest Model
 
-[Jean-Louis Dessalles' Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) centers on an **unexpectedness score**: **U = Cv - C**
+[Jean-Louis Dessalles' Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) provides a mathematical approach to recognizing breakthrough insights through an **unexpectedness score**: **U = Cv - C**
 
 Where:
 - Cv (generation complexity): Length of the shortest specification the world would need to generate this situation under current causal constraints
 - C (description complexity): Length of the shortest description that uniquely identifies the outcome
 - U (unexpectedness score): The gap that signals "something structurally significant is happening"
 
-Think of it like walking into a teenager's bedroom and finding it spotless—simple to describe, but based on what you know about teenagers, this should be nearly impossible. That gap signals "something interesting is happening here." Maybe there's a hidden incentive system, maybe the parents implemented new rules, or maybe you've stumbled onto a deeper pattern about motivation that reveals something important about human behavior.
+Think of it like walking into a teenager's bedroom and finding it spotless—simple to describe, but based on what you know about teenagers, this should be nearly impossible. That gap signals "something interesting is happening here."
 
-But unexpectedness alone doesn't determine what we find interesting. ST recognizes that interest depends on both **unexpectedness** and **emotional intensity**—the personal or social impact of the domain. Both components matter:
+*Note: Unexpectedness alone doesn't determine interest—ST recognizes that domains with personal or social significance amplify our attention to unexpected patterns. But for breakthrough discovery, the unexpectedness component provides the core computational framework.*
 
-- High unexpectedness in trivial domains (like lottery numbers) generates curiosity but not sustained interest
-- High emotional intensity in predictable domains (like routine medical care) generates concern but not breakthrough potential  
-- The combination of both—unexpected patterns in high-stakes domains like cancer research, climate solutions, or fundamental physics—creates the conditions where breakthroughs matter most
+### What Makes Insights Valuable: Compression Gain
 
-This dual-component structure means high-value research emerges from either technical surprises (high U) or critical domains (high emotional intensity), and often both simultaneously in mature high-stakes fields where economic filtering ensures remaining problems have high complexity.
+ST recognizes genuine insights by measuring how much **compression gain** they provide. When we apply the unexpectedness score to candidate insights:
 
-**Observer-Dependent Complexity**: The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge. The lottery sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical thinking for real systems.
-
-Simplicity Theory excels at insight recognition but provides only limited guidance for concept generation. Here's how it works:
-
-**Detecting Explanatory Debt**: ST can identify areas where simple patterns require complex explanations, flagging research directions that may be ripe for theoretical breakthrough. When you can efficiently describe patterns but explaining *why* those patterns exist requires many separate, complex causal mechanisms, you have **explanatory debt**. High explanatory debt signals opportunity—when you have simple pattern descriptions but expensive causal explanations, you're ripe for a theoretical breakthrough.
-
-**Recognizing Insights**: ST recognizes genuine insights by measuring the unexpectedness of *proposed connections or theories*. When we apply the unexpectedness score to candidate insights:
 - C (description complexity): How simply can the insight itself be stated? ("variation + selection → adaptation") 
 - Cv (generation complexity): How much intellectual preparation and fortunate circumstances were required to produce this connection?
-- High unexpectedness scores signal **compression gain**—when many separate observations collapse into a single explanatory mechanism, creating both simplicity and power
 
-**The Power and Limits of Dual Application**: ST's strength lies in evaluating candidates, not generating them. We can use unexpectedness measurements to identify areas with explanatory debt (flagging promising research directions), then use the same measurements to recognize genuine breakthroughs when they emerge. However, the crucial middle step—systematically generating promising concept combinations—remains largely unsolved. 
+High unexpectedness scores signal **compression gain**—when many separate observations collapse into a single explanatory mechanism, creating both simplicity and power. This is what distinguishes breakthrough insights from meaningless novelty.
 
-ST doesn't tell us that "population pressure" and "heredity" are worth combining rather than "population pressure" and "cloud formation." It can only evaluate such combinations after they're proposed.
+### How to Detect Opportunities: Explanatory Debt
 
-Let's see both functions work in history's most famous breakthrough.
+ST can identify research areas ripe for breakthrough by detecting **explanatory debt**—situations where simple patterns require complex explanations. When you can efficiently describe patterns but explaining *why* those patterns exist requires many separate, complex causal mechanisms, you have high explanatory debt.
+
+High explanatory debt signals opportunity: areas where a theoretical breakthrough could collapse many separate explanations into a single mechanism. This is how ST flags promising research directions without generating specific concept combinations.
+
+### Observer-Dependent Complexity: Making ST Practical
+
+The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge. The lottery sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical calculations for real systems.
+
+### What ST Can and Cannot Do
+
+**ST's Strength - Insight Recognition**: ST excels at evaluating proposed connections. We can use unexpectedness measurements to recognize genuine breakthroughs when they emerge—distinguishing compression gain from meaningless association.
+
+**ST's Limitation - Concept Generation**: ST provides minimal guidance for systematically generating meaningful concept combinations. It can flag research areas with explanatory debt, but doesn't tell us that "population pressure" and "heredity" are worth combining rather than "population pressure" and "cloud formation." It can only evaluate such combinations after they're proposed.
+
+This fundamental limitation means the crucial middle step—systematically generating promising concept combinations—remains largely unsolved.
 
 ## What Made Darwin's Insight Special: How ST Explains Breakthrough Discovery
 
