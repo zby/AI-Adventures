@@ -15,6 +15,8 @@ Gwern acknowledges this inefficiency problem—he knows random combination would
 
 The real challenge requires both smarter targeting of promising combinations and better recognition of which connections actually create interesting breakthroughs.
 
+Fortunately, there's a computational framework for both challenges.
+
 ## The Framework: Simplicity Theory's Interest Model
 
 [Jean-Louis Dessalles' Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) provides the answer through a dual-component model: **Interest = f(U, Emotional_Intensity)**
@@ -52,6 +54,8 @@ Here we apply the unexpectedness score to candidate insights:
 
 **The Power of Dual Application**: This is why ST works where other approaches fail. We're not randomly searching—we use unexpectedness measurements to systematically identify where to look (Function 1), then use the same measurements to recognize genuine breakthroughs when they emerge (Function 2). 
 
+Let's see both functions work in history's most famous breakthrough.
+
 ## What Made Darwin's Insight Special: How ST Explains Breakthrough Discovery
 
 To see how Simplicity Theory's dual functions work in practice, let's examine what exactly distinguishes a breakthrough insight from meaningless word association.
@@ -88,12 +92,16 @@ What distinguished Darwin's "population theory + adaptation puzzles" from our hy
 
 Recent computational work by [Sileno and Dessalles](https://arxiv.org/abs/2307.15453) suggests these complexity calculations might be tractable through logic programming, moving ST from pure theory toward implementable discovery systems.
 
+So what does this mean for building real AI discovery systems?
+
 ## Where ST Actually Helps: Targeting and Recognition
 Simplicity Theory's Interest model addresses both phases of Gwern's challenge through its dual-component structure. For targeting, ST provides guidance in two ways: **explanatory debt** detection (high unexpectedness scores from simple descriptions requiring complex explanations) AND domain prioritization (high emotional intensity in high-stakes fields). This combination is crucial—using unexpectedness alone would miss important problems in mature domains, while emotional intensity alone would lack precision. 
 
 Economic filtering in mature high-stakes domains creates a powerful convergence—the most important unsolved problems necessarily have high complexity, making breakthroughs inherently high-unexpectedness events.
 
 The insight recognition problem appears genuinely solved. ST provides a concrete test for **compression gain**: when N distinct observations requiring separate explanations collapse to a single mechanism plus local parameters, the compression ratio quantifies breakthrough value. [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates this calculation is actually tractable through logic programming.
+
+But we need to be honest about what's actually buildable today.
 
 ## Implementation Reality: What Can We Actually Build?
 
@@ -121,10 +129,8 @@ Simplicity Theory's complete Interest model addresses both gaps more comprehensi
 
 CompLog demonstrates that insight recognition through **compression gain** detection is computationally feasible. However, fundamental challenges remain: systematically identifying concept combinations, scaling beyond constrained domains, and the broader semantic understanding required for cross-domain insight generation.
 
-While other approaches like Bayesian inference excel at systematic learning from data streams¹, ST offers something unique—a formal framework for detecting the salience of individual events and breakthrough moments. This makes it particularly suited to Gwern's original challenge: how do you recognize when a random connection has produced genuine insight rather than meaningless novelty?
+While other approaches like Bayesian inference excel at systematic learning from data streams, ST offers something unique—a formal framework for detecting the salience of individual events and breakthrough moments. Both approaches ultimately seek compression through the Minimum Description Length principle, but Bayesian methods focus on systematic model updating while ST specializes in real-time salience detection. This makes ST particularly suited to Gwern's original challenge: how do you recognize when a random connection has produced genuine insight rather than meaningless novelty?
 
 With computational approaches like CompLog demonstrating feasibility, we can begin testing simplified versions of this framework on constrained discovery tasks. While we're still far from Darwin-like insights, the framework has moved from pure theory toward something potentially testable. The distinction between mere novelty and genuine insight will ultimately separate truly intelligent systems from sophisticated text generators. What we've outlined here combines theoretical framework with practical implementation—building on both information theory and cognitive science to make AI "daydreaming" a systematic discovery process rather than brute-force search.
 
-**Meta-insight (or: When Your Framework Becomes Self-Aware)**: Let's apply our own medicine here. The core claim—"use Simplicity Theory to make AI discovery less random"—is delightfully simple to state (low C) but required synthesizing papers across cognitive science, information theory, and AI research (reasonably high Cv). So according to our own framework, this should register as genuinely interesting! Though we suspect Simplicity Theory would also flag "use quantum mechanics to optimize pizza delivery routes" as potentially breakthrough material, so perhaps we shouldn't get too excited.
-
-¹ **Alternative Path: Bayesian Model Selection** - While Simplicity Theory provides our primary framework for insight detection, Bayesian model inference offers a complementary approach to the same fundamental goal of finding meaningful patterns through compression. The Bayesian framework implements an automatic preference for simpler models through "Bayesian Occam's Razor"—complex models that can explain too many different outcomes are naturally penalized because they spread their predictive probability too thinly. This connects to Simplicity Theory through the Minimum Description Length (MDL) principle, showing that both approaches ultimately seek to minimize the total length needed to describe both the model and the data it explains. For AI implementation, this suggests potential hybrid architectures: Bayesian methods for systematic learning and model updating, paired with ST-like mechanisms for real-time salience detection.
+**Meta-insight**: Let's apply our own framework here. The core claim—"use Simplicity Theory to make AI discovery less random"—is delightfully simple to state (low C) but required synthesizing papers across cognitive science, information theory, and AI research (reasonably high Cv). So according to our own framework, this should register as genuinely interesting!
