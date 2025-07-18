@@ -6,18 +6,18 @@ Picture yourself stuck on a problem for weeks. You've tried everything, then whi
 
 Gwern's solution has two key gaps: while coherence is checkable and novelty can be measured information-theoretically, usefulness remains completely undefined, and the completely random selection of concepts to combine is computationally inefficient.
 
-[Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) offers partial solutions to these challenges: it provides a principled framework for distinguishing breakthrough insights from meaningless novelty (substantially improving the filtering problem), while offering limited guidance for identifying promising research domains—though it doesn't solve the core challenge of systematically generating meaningful concept combinations, whether within domains or across them.
+[Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) offers partial solutions to these challenges: given a set of concepts, ST can tell if they contain a puzzle (opportunity for compression gain), and given concepts plus a proposed insight, ST can tell if the insight is meaningful—but it doesn't help with the exponential search through possible concept combinations.
 
-## The Core Problem: Selection and Generation Challenges
+## The Core Improvement: From Blind Search to Targeted Search—But Still Exponential
 
-To see why these gaps matter, consider what Gwern's proposal would actually produce in practice:
+To see why Simplicity Theory improves but doesn't solve the search problem, consider what different approaches would actually produce:
 
-- Random combination: Randomly select articles about "sky color" and "pizza ingredients" → "Blue sky pizza cheese"
-- Guided search: Darwin actively seeking mechanisms to explain adaptation, then recognizing Malthus' relevance
+- **Blind search**: Randomly select articles about "sky color" and "pizza ingredients" → "Blue sky pizza cheese"
+- **ST-guided search**: First identify puzzle pieces (Darwin's adaptation observations), then search for missing pieces (finding Malthus)
 
-Gwern acknowledges this inefficiency problem—he knows random combination would generate millions of meaningless outputs for every valuable connection. His proposal essentially accepts massive computational waste as the price for comprehensive exploration. But even acknowledging the inefficiency, his brute-force approach leaves the core challenge unsolved: **targeting which concepts to combine**—systematically identifying which concepts are worth combining, whether within domains or across them.
+Simplicity Theory provides a crucial improvement over Gwern's brute-force approach. While Gwern accepts massive computational waste by randomly combining all concepts, ST can first identify which concepts form puzzles, dramatically narrowing the search space. Darwin's success demonstrates this: he recognized his adaptation observations formed a puzzle, then targeted his search for the missing mechanism.
 
-While Simplicity Theory helps with insight recognition, this fundamental generation problem remains largely unsolved.
+But here's the key limitation: **even with puzzle identification, the search for missing pieces remains exponential**. Once you know you have a puzzle, you still face the combinatorial challenge of determining which additional concepts might complete it. ST transforms blind search into targeted search—a significant improvement—but doesn't eliminate the fundamental exponential scaling problem.
 
 ## The Framework: Simplicity Theory
 
@@ -50,13 +50,13 @@ The key insight that makes ST computationally tractable is that complexity is al
 ### What ST Can and Cannot Do
 
 **What ST Can Do**:
-- **Research Area Assessment**: Identify fields ripe for breakthrough by detecting opportunities for compression gain
-- **Insight Recognition**: Evaluate proposed concept combinations for compression gain, distinguishing breakthrough insights from meaningless associations
+- **Puzzle Recognition**: Given a set of concepts, determine if they contain a puzzle (opportunity for compression gain)
+- **Insight Evaluation**: Given concepts plus a proposed insight, determine if the insight is meaningful by measuring compression gain
 
 **What ST Cannot Do**:
-- **Systematic Concept Generation**: ST cannot systematically identify which specific concepts should be combined, whether within a domain or across domains. It doesn't tell us that "population pressure" (economics) and "heredity" (biology) are worth combining rather than "population pressure" and "cloud formation."
+- **Systematic Concept Search**: Navigate the exponential space of possible concept combinations. ST doesn't help you discover that "population pressure" (economics) and "heredity" (biology) are worth combining rather than "population pressure" and "cloud formation."
 
-This fundamental limitation means the crucial middle step—systematically generating specific concept combinations within promising research areas—remains largely unsolved.
+This fundamental limitation means the crucial middle step—navigating the exponential search space of possible concept combinations—remains largely unsolved.
 
 ## What Made Darwin's Insight Special: How ST Explains Breakthrough Discovery
 
@@ -102,7 +102,7 @@ So what does this mean for building real AI discovery systems?
 
 Simplicity Theory addresses one of Gwern's challenges definitively while offering limited help with the other. For **insight recognition**, ST provides a concrete framework through detecting compression gains. This definitively solves Gwern's "usefulness" filter problem.
 
-For **targeting which concepts to combine**, ST offers minimal guidance. While ST can flag research areas where simple patterns require complex explanations (signaling compression opportunities), it doesn't solve the fundamental challenge of systematically identifying which specific concepts are worth combining. Whether the concepts come from the same domain or different domains, ST excels at evaluating proposed combinations but provides little direction for generating them.
+For **targeting which concepts to combine**, ST offers minimal guidance. While ST can flag conceptual puzzles where simple patterns require complex explanations (signaling compression opportunities), it doesn't solve the fundamental challenge of systematically identifying which specific concepts are worth combining. ST excels at evaluating proposed combinations but provides little direction for generating them.
 
 The ability to recognize insights appears robust. [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates that compression gain calculations are tractable through logic programming.
 
@@ -114,9 +114,9 @@ Can we build AI that discovers like Darwin did? The question cuts to the heart o
 
 Current AI systems could implement three practical components of ST-based discovery:
 
-**Detecting Compression Opportunities**: Scan research literature to identify patterns that have simple descriptions but require complex, piecemeal explanations. Flag these as high-potential research areas.
+**Detecting Compression Opportunities**: Scan research literature to identify patterns that have simple descriptions but require complex, piecemeal explanations. Flag these as high-potential conceptual puzzles.
 
-> If we could detect when a field has simple patterns requiring complex explanations—signaling compression opportunities—which domains would top your list?
+> If we could detect when concepts form puzzles where simple patterns require complex explanations—signaling compression opportunities—which conceptual puzzles would be most ripe for breakthrough?
 
 **Evaluating Compression Gains**: Use the [CompLog framework](https://arxiv.org/abs/2307.15453) to test proposed connections for genuine insight value by calculating compression ratios.
 
@@ -128,7 +128,7 @@ What remains beyond current capabilities is the core challenge: systematically g
 
 ## Conclusion
 
-Gwern's insight about AI needing background processing is brilliant, and he's honest about the computational challenges of random combination. His brute-force approach leaves the core challenge unsolved: **targeting which concepts to combine**—systematically identifying which concepts are worth combining, whether within domains or across them.
+Gwern's insight about AI needing background processing is brilliant, and he's honest about the computational challenges of random combination. His brute-force approach leaves the core challenge unsolved: **navigating the exponential search space**—systematically exploring which concept combinations are worth pursuing.
 
 Simplicity Theory makes significant progress on insight recognition while offering limited help with concept generation. The framework's compression gain detection provides a principled solution to Gwern's undefined "usefulness" filter—we can computationally distinguish breakthrough insights from meaningless associations. CompLog demonstrates this recognition capability is actually implementable.
 
