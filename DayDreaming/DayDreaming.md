@@ -19,10 +19,10 @@ The real challenge requires both smarter targeting of promising combinations and
 
 [Jean-Louis Dessalles' Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) provides the answer through a dual-component model: **Interest = f(U, Emotional_Intensity)**
 
-Where unexpectedness **U = Cv - C**:
+Where **U = Cv - C** (the unexpectedness score):
 - Cv (generation complexity): Length of the shortest specification the world would need to generate this situation under current causal constraints
 - C (description complexity): Length of the shortest description that uniquely identifies the outcome
-- U (unexpectedness): The gap that signals "something structurally significant is happening"
+- U (unexpectedness score): The gap that signals "something structurally significant is happening"
 
 And **Emotional_Intensity** captures the personal/social impact of the domain—including high-stakes areas like cancer research, climate solutions, or fundamental physics.
 
@@ -34,10 +34,10 @@ We can use Simplicity Theory in both Domain Targeting and Insight Recognition.
 
 **Function 1 - Domain Targeting**: Identifies domains worth investigating by measuring the unexpectedness of *current observations and patterns*:
 
-When we apply U = Cv - C to existing phenomena:
+When we apply the unexpectedness score to existing phenomena:
 - C (description complexity): How simply can we describe the observed pattern? 
 - Cv (generation complexity): How complex are the causal mechanisms needed to explain why this pattern exists?
-- High U signals **explanatory debt**: Simple descriptions requiring complex explanations flag domains ripe for theoretical breakthrough
+- High unexpectedness scores signal **explanatory debt**—simple patterns requiring complex explanations flag domains ripe for theoretical breakthrough
 
 **Explanatory debt** occurs when you can efficiently catalog observations into recognizable patterns, but explaining *why* those patterns exist requires many separate, complex causal mechanisms. High explanatory debt signals opportunity—when you have simple pattern descriptions but expensive causal explanations, you're ripe for a theoretical breakthrough that explains the patterns through a single underlying mechanism.
 
@@ -45,10 +45,10 @@ Combined with **domain importance** (high emotional intensity prioritizes cancer
 
 **Function 2 - Insight Recognition**: Recognizes genuine insights by measuring the unexpectedness of *proposed connections or theories*:
 
-Here we apply U = Cv - C to candidate insights:
+Here we apply the unexpectedness score to candidate insights:
 - C (description complexity): How simply can the insight itself be stated? ("variation + selection → adaptation") 
 - Cv (generation complexity): How much intellectual preparation and fortunate circumstances were required to produce this connection?
-- High U signals compression gain: Simple insights emerging from complex preparation indicate breakthrough discoveries, not random associations
+- High unexpectedness scores signal **compression gain**—simple insights emerging from complex preparation indicate breakthrough discoveries, not random associations
 
 **The Power of Dual Application**: This is why ST works where other approaches fail. We're not randomly searching—we use unexpectedness measurements to systematically identify where to look (Function 1), then use the same measurements to recognize genuine breakthroughs when they emerge (Function 2). 
 
@@ -60,7 +60,7 @@ The key insight is recognizing when you can efficiently describe patterns but la
 
 Consider what happened in October 1838. Darwin had been wrestling with the mystery of adaptation for years, accumulating observations that defied easy explanation. But crucially, he had first recognized that adaptation itself was deeply unexpected under existing theories.
 
-The widespread fact that organisms are exquisitely fitted to their environments is easy to describe but extraordinarily difficult to explain without evolution. You can summarize the pattern in a few words: "species are well-adapted to their ecological niches." But explaining *why* this pattern exists requires invoking separate causal mechanisms for each case—divine creation events, Lamarckian use/disuse, climate-driven modifications. The gap between simple description and complex explanation creates massive unexpectedness (U), flagging this domain as ripe for theoretical breakthrough—this demonstrates ST's **domain targeting function**.
+The widespread fact that organisms are exquisitely fitted to their environments is easy to describe but extraordinarily difficult to explain without evolution. You can summarize the pattern in a few words: "species are well-adapted to their ecological niches." But explaining *why* this pattern exists requires invoking separate causal mechanisms for each case—divine creation events, Lamarckian use/disuse, climate-driven modifications. This creates massive **explanatory debt**, flagging this domain as ripe for theoretical breakthrough—demonstrating ST's **domain targeting function**.
 
 Darwin had accumulated observations that all pointed to this same puzzling pattern:
 
@@ -74,22 +74,22 @@ Each adaptation appeared as a separate puzzle piece. His world-model needed case
 
 Then he read Malthus on population growth. Population pressure + resource competition + heritable variation → differential survival → accumulated adaptation over generations.
 
-**Insight recognition in action**: A vast pattern (organismal adaptation, divergence, extinction, branching) collapsed to a short causal recipe:
+**Compression gain in action**: A vast pattern (organismal adaptation, divergence, extinction, branching) collapsed to a short causal recipe:
 
 Variation + Heredity + Overproduction + Competition → Selection → Cumulative Change
 
-This demonstrates ST's **insight selection function**. Darwin's breakthrough is easy to describe (the simple causal recipe above) but would be extraordinarily difficult to generate without the prepared mind. The requirements to produce this insight are massive—you need years of biological observation, exposure to Malthus at the right moment, and the cognitive ability to see the connection. But the insight itself is minimal—a short causal mechanism that explains thousands of observations.
+This demonstrates ST's **insight recognition function**. Darwin's breakthrough is easy to describe (the simple causal recipe above) but would be extraordinarily difficult to generate without the prepared mind. The requirements to produce this insight are massive—you need years of biological observation, exposure to Malthus at the right moment, and the cognitive ability to see the connection. But the insight itself is minimal—a short causal mechanism that explains thousands of observations.
 
 *Note: ST isn't a perfect filter—some high-unexpectedness events will be meaningless curiosities rather than breakthrough opportunities.*
 
-What distinguished Darwin's "population theory + adaptation puzzles" from our hypothetical "blue sky + pizza cheese"? Both involve connecting previously separate concepts and both produce something novel. Yet one launched a scientific revolution while the other is meaningless noise. The difference lies in compression gain—Darwin's connection explains vast patterns through simple mechanisms, while random word combinations typically create no explanatory value.
+What distinguished Darwin's "population theory + adaptation puzzles" from our hypothetical "blue sky + pizza cheese"? Both involve connecting previously separate concepts and both produce something novel. Yet one launched a scientific revolution while the other is meaningless noise. The difference lies in **compression gain**—Darwin's connection explains vast patterns through simple mechanisms, while random word combinations typically create no explanatory value.
 
 Recent computational work by [Sileno and Dessalles](https://arxiv.org/abs/2307.15453) suggests these complexity calculations might be tractable through logic programming, moving ST from pure theory toward implementable discovery systems.
 
 ## Where ST Actually Helps: Targeting and Recognition
-Simplicity Theory's Interest model addresses both phases of Gwern's challenge through its dual-component structure. For targeting, ST provides guidance in two ways: explanatory debt detection (high U from simple descriptions requiring complex explanations) AND domain prioritization (high emotional intensity in high-stakes fields). This combination is crucial—using unexpectedness alone would miss important problems in mature domains, while emotional intensity alone would lack precision. Economic filtering in mature high-stakes domains creates a powerful convergence—the most important unsolved problems necessarily have high complexity, making breakthroughs inherently high-U events.
+Simplicity Theory's Interest model addresses both phases of Gwern's challenge through its dual-component structure. For targeting, ST provides guidance in two ways: **explanatory debt** detection (high unexpectedness scores from simple descriptions requiring complex explanations) AND domain prioritization (high emotional intensity in high-stakes fields). This combination is crucial—using unexpectedness alone would miss important problems in mature domains, while emotional intensity alone would lack precision. Economic filtering in mature high-stakes domains creates a powerful convergence—the most important unsolved problems necessarily have high complexity, making breakthroughs inherently high-unexpectedness events.
 
-The insight recognition problem appears genuinely solved. ST provides a concrete test for compression gain: when N distinct observations requiring separate explanations collapse to a single mechanism plus local parameters, the compression ratio quantifies breakthrough value. [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates this calculation is actually tractable through logic programming.
+The insight recognition problem appears genuinely solved. ST provides a concrete test for **compression gain**: when N distinct observations requiring separate explanations collapse to a single mechanism plus local parameters, the compression ratio quantifies breakthrough value. [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates this calculation is actually tractable through logic programming.
 
 ## Implementation Reality: What Can We Actually Build?
 
