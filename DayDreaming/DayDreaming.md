@@ -80,9 +80,7 @@ Then he read Malthus on population growth. Population pressure + resource compet
 
 Variation + Heredity + Overproduction + Competition → Selection → Cumulative Change
 
-This demonstrates ST's **insight recognition function**. Darwin's breakthrough is easy to describe (the simple causal recipe above) but would be extraordinarily difficult to generate without the prepared mind. 
-
-The requirements to produce this insight are massive—years of biological observation, exposure to Malthus at the right moment, and the cognitive ability to see the connection. But the insight itself is minimal—a short causal mechanism that explains thousands of observations.
+This demonstrates ST's **insight recognition function**. Darwin's breakthrough is easy to describe (the simple causal recipe above) but would be extraordinarily difficult to generate without the prepared mind. The requirements to produce this insight are massive—years of biological observation, exposure to Malthus at the right moment, and the cognitive ability to see the connection. But the insight itself is minimal—a short causal mechanism that explains thousands of observations.
 
 *Note: ST isn't a perfect filter—some high-unexpectedness events will be meaningless curiosities rather than breakthrough opportunities.*
 
@@ -125,9 +123,7 @@ CompLog demonstrates that insight recognition through **compression gain** detec
 
 While other approaches like Bayesian inference excel at systematic learning from data streams¹, ST offers something unique—a formal framework for detecting the salience of individual events and breakthrough moments. This makes it particularly suited to Gwern's original challenge: how do you recognize when a random connection has produced genuine insight rather than meaningless novelty?
 
-With computational approaches like CompLog demonstrating feasibility, we can begin testing simplified versions of this framework on constrained discovery tasks. While we're still far from Darwin-like insights, the framework has moved from pure theory toward something potentially testable. 
-
-The distinction between mere novelty and genuine insight will ultimately separate truly intelligent systems from sophisticated text generators. What we've outlined here combines theoretical framework with practical implementation—building on both information theory and cognitive science to make AI "daydreaming" a systematic discovery process rather than brute-force search.
+With computational approaches like CompLog demonstrating feasibility, we can begin testing simplified versions of this framework on constrained discovery tasks. While we're still far from Darwin-like insights, the framework has moved from pure theory toward something potentially testable. The distinction between mere novelty and genuine insight will ultimately separate truly intelligent systems from sophisticated text generators. What we've outlined here combines theoretical framework with practical implementation—building on both information theory and cognitive science to make AI "daydreaming" a systematic discovery process rather than brute-force search.
 
 **Meta-insight (or: When Your Framework Becomes Self-Aware)**: Let's apply our own medicine here. The core claim—"use Simplicity Theory to make AI discovery less random"—is delightfully simple to state (low C) but required synthesizing papers across cognitive science, information theory, and AI research (reasonably high Cv). So according to our own framework, this should register as genuinely interesting! Though we suspect Simplicity Theory would also flag "use quantum mechanics to optimize pizza delivery routes" as potentially breakthrough material, so perhaps we shouldn't get too excited.
 
