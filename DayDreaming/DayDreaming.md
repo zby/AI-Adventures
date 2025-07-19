@@ -112,13 +112,9 @@ This approach works directly with natural language, bypassing CompLog's encoding
 
 ### Building Block 3: Discovery Architecture
 
-**The Vision**: Combine validated components into discovery-capable systems:
+**The Challenge**: Combine validated components into discovery-capable systems that can reliably distinguish breakthrough insights from sophisticated noise.
 
-**Puzzle Detection Systems**: Scan for patterns with simple descriptions but complex explanations—ST's signature of breakthrough opportunities. Applications range from monitoring research literature for emerging conceptual puzzles to analyzing personal knowledge systems (Obsidian, Roam Research) for unexpectedness patterns.
-
-**Hybrid Discovery Systems**: Human concept generation paired with AI insight evaluation—researchers propose connections while AI evaluates compression gain, creating human-AI teams optimized for different aspects of discovery.
-
-**Current Reality**: These remain largely speculative, dependent on solving the evaluation bridge problem first.
+**Current Reality**: While we have validated concept combination and theoretical evaluation frameworks, practical discovery systems remain largely speculative, dependent on solving the evaluation bridge problem first.
 
 ### The Remaining Limitation: Multi-Puzzle Complexity
 
@@ -136,11 +132,11 @@ The most promising path forward involves LLM-based approximation of ST metrics, 
 
 ## Applications and Future Directions
 
-## Conclusion
+If successful, ST-guided discovery systems could enable several applications:
 
-We have promising theory and emerging computational approaches, but significant experimentation is required to determine if this actually works in practice.
+**Puzzle Detection Systems**: Scan for patterns with simple descriptions but complex explanations—ST's signature of breakthrough opportunities. Applications range from monitoring research literature for emerging conceptual puzzles to analyzing personal knowledge systems (Obsidian, Roam Research) for unexpectedness patterns.
 
-If successful, several applications become possible:
+**Hybrid Discovery Systems**: Human concept generation paired with AI insight evaluation—researchers propose connections while AI evaluates compression gain, creating human-AI teams optimized for different aspects of discovery.
 
 **Research Tools**: AI systems could scan research literature for compression opportunities, knowledge management systems could flag when accumulated notes form unexpectedness patterns, and browser extensions could display unexpectedness ratings for papers.
 
@@ -149,5 +145,13 @@ If successful, several applications become possible:
 **AI Training**: ST could address a fundamental challenge in LLM development. While mathematical problems provide objectively verifiable answers, insight generation typically requires expensive human preference ratings to distinguish genuine insights from sophisticated-sounding nonsense. ST's compression gain metrics could provide automatic verification, enabling training toward genuine discovery rather than just fluent text.
 
 The potential is significant: research tools that actively support discovery rather than just information retrieval. But substantial work remains to validate whether these theoretical frameworks translate into practical systems.
+
+## Conclusion
+
+We have promising theory and emerging computational approaches, but significant experimentation is required to determine if this actually works in practice.
+
+Simplicity Theory addresses Gwern's insight recognition problem through compression gain detection, while validated LLM capabilities demonstrate feasible concept combination. The critical missing piece is bridging theory to practice—developing reliable ST-guided filtering that works with natural language knowledge systems.
+
+The most promising path forward involves LLM-based approximation of ST metrics, but substantial empirical work is needed to validate whether this approach can reliably distinguish meaningful insights from sophisticated-sounding noise.
 
 What will you build?
