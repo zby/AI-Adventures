@@ -12,7 +12,7 @@ Consider the math: If you have just 1,000 concepts in your knowledge base, there
 
 Gwern proposes using LLMs to evaluate usefulness, but this creates a second problem: **LLMs can't reliably distinguish genuine insights from sophisticated noise**. Without principled criteria for recognizing genuine insights, you're drowning in combinations that sound profound but lack real compression power.
 
-This is where Simplicity Theory becomes crucial. It offers more than just better evaluation—it provides the principled filtering needed for mathematical decomposition of the search space. Instead of searching all possible combinations at once, we can search hierarchically: find puzzles first, then find their solutions.
+To solve both problems, we need principled evaluation criteria that can distinguish genuine insights from sophisticated noise, AND a way to mathematically decompose the exponential search space. This is exactly what Simplicity Theory provides. It offers more than just better evaluation—it provides the principled filtering needed for mathematical decomposition of the search space. Instead of searching all possible combinations at once, we can search hierarchically: find puzzles first, then find their solutions.
 
 Here's how.
 
@@ -35,9 +35,11 @@ The magic happens when insights collapse that gap. Darwin's evolution explained 
 
 But here's the crucial limitation: ST can recognize when you've found a good insight, but it can't tell you which concepts to combine in the first place. It's a powerful filter, not a generator. This suggests we need an architecture that maximizes filtering opportunities while minimizing generation costs.
 
+This limitation actually points to the solution: if ST excels at filtering but not generation, we should structure our search to maximize filtering opportunities. Instead of generating all possible concept combinations and filtering for insights directly, we can split the problem hierarchically—first generate and filter for valid puzzles, then generate and filter for insights that solve those puzzles.
+
 ## Why ST Enables a Two-Phase Discovery Architecture
 
-We can use ST to solve both of Gwern's problems through a two-phase approach that reduces search complexity AND provides principled evaluation:
+We can use ST to solve both of Gwern's problems through this two-phase approach that reduces search complexity AND provides principled evaluation:
 
 **Phase 1: Search for Valid Puzzles**
 - **Search space**: All concept combinations from your knowledge base  
@@ -57,21 +59,10 @@ The key advantage: ST addresses both of Gwern's problems. It provides principled
 
 Here's why this dramatically reduces computational cost:
 
-**Traditional approach**:
-- Search all concept combinations for insights directly
-- Apply expensive insight generation to every combination up to some size limit
+The key insight: **mathematical decomposition reduces total combinations**. Instead of searching C(n,k1+k2) combinations directly, you search C(n,k1) + (valid_puzzles × C(remaining,k2)). Since **valid puzzles are rare**, the second term is much smaller than the original search space.
 
-**Two-phase approach**:
-- **Phase 1**: Search concept combinations for puzzles  
-- **Phase 2**: Search additional concepts for insights, but only for validated puzzles
-- **Total cost**: C(n,k1) + (valid_puzzles × C(remaining,k2))
-
-The key insight: **mathematical decomposition reduces total combinations**. Instead of searching C(n,k1+k2) combinations directly, you search C(n,k1) + (valid_puzzles × C(remaining,k2)). Since **valid puzzles are rare**, the second term is much smaller than the original exponential search space.
-
-The advantage compounds as concepts increase:
-
-**Example with 1000 concepts, 4-concept insights (2 for puzzle + 2 for solution):**
-- Traditional: C(1000,4) = 41,417,124,750 combinations
+**Example with 1000 concepts, 4-concept insights:**
+- Traditional: Direct search of all 4-concept combinations = 41+ billion 
 - Two-phase: C(1000,2) + (valid_puzzles × C(998,2)) = 499,500 + (valid_puzzles × 497,503)
 
 **How rare are valid puzzles?** Most concept combinations like "bicycle + quantum mechanics" or "pizza + weather patterns" don't suggest meaningful puzzles that meet ST's criteria (high unexpectedness with simple descriptions). Valid puzzles should be genuinely rare—perhaps 0.1% or even 0.01% of combinations.
@@ -85,9 +76,17 @@ The advantage compounds as concepts increase:
 
 ## The Two-Phase Approach in Action: Darwin's Breakthrough
 
-Let's trace how the two-phase approach would work on the adaptation puzzle that led to evolution theory. *(Note: This simulates our algorithm—we're not claiming anyone followed this process.)*
+Let's simulate how the two-phase approach would discover and solve the adaptation puzzle that led to evolution theory. *(Note: This simulates our algorithm applied to 19th-century naturalist knowledge—we're not claiming anyone followed this process.)*
 
-**Phase 1 Complete**: Previous naturalists had identified a validated puzzle: "Why do organisms have traits that perfectly match their environments?" This creates massive unexpectedness under ST criteria—simple to observe (perfect fit everywhere), but should require countless separate explanations given available mechanisms.
+**Phase 1: Puzzle Discovery**
+Starting with the naturalist knowledge base, systematically combine concepts:
+- **Concept combination**: "Organism traits" + "Environmental conditions"
+- **LLM puzzle generation**: "What puzzle does this combination suggest?"
+- **Generated puzzle**: "Why do organisms have traits that perfectly match their environments?"
+- **ST evaluation**: 
+  - Description complexity (C): Very simple—"perfect environmental fit observed everywhere"
+  - Generation complexity (Cv): Extremely high—would require countless separate design explanations
+  - Unexpectedness score (U): Massive gap → **Validated puzzle**
 
 **Phase 2: Insight Generation**
 Now systematically apply expensive computational resources to this validated puzzle:
@@ -112,8 +111,6 @@ This demonstrates the practical power of hierarchical search over direct search.
 We have a concrete algorithmic approach, but implementation challenges remain.
 
 **The algorithm is clear**: Two-phase hierarchical search using LLMs for generation and ST for evaluation. Phase 1 searches concept combinations for valid puzzles, Phase 2 searches additional concepts for insights (but only for validated puzzles).
-
-**What already works**: AI can generate creative concept combinations and evaluate puzzles/solutions when prompted appropriately. Modern LLMs successfully perform both tasks—this validates the basic feasibility.
 
 **The implementation challenge**: Building reliable ST approximations that work at scale with natural language concepts.
 
