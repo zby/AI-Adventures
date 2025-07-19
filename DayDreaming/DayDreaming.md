@@ -12,7 +12,7 @@ Consider the math: If you have just 1,000 concepts in your knowledge base, there
 
 Gwern proposes using LLMs to evaluate usefulness, but this creates a second problem: **LLMs can't reliably distinguish genuine insights from sophisticated noise**. Without principled criteria for recognizing genuine insights, you're drowning in combinations that sound profound but lack real compression power.
 
-This is where Simplicity Theory becomes crucial. It offers more than just better evaluation—it enables a fundamentally different search architecture that breaks the exponential explosion into manageable phases AND provides mathematical criteria for recognizing genuine insights. Instead of searching all possible combinations at once, we can search compositionally: find puzzles first, then find their solutions.
+This is where Simplicity Theory becomes crucial. It offers more than just better evaluation—it provides the principled filtering needed for mathematical decomposition of the search space. Instead of searching all possible combinations at once, we can search hierarchically: find puzzles first, then find their solutions.
 
 Here's how.
 
@@ -33,97 +33,85 @@ When this gap is large, you've found a puzzle worth solving.
 
 The magic happens when insights collapse that gap. Darwin's evolution explained thousands of separate "organism perfectly fits environment" observations with one simple mechanism: variation + selection + inheritance + time. Massive compression gain—many complex explanations became one simple rule.
 
-But here's the crucial limitation: ST can recognize when you've found a good insight, but it can't tell you which concepts to combine in the first place. It's a powerful filter, not a generator.
-
-This solves Gwern's core problem: distinguishing meaningful insights from sophisticated noise. While an LLM might find both "Darwin's evolution" and "blockchain-powered meditation apps" equally novel and coherent, ST provides mathematical criteria. Real insights create compression gain—they explain more with less. Random combinations typically don't.
-
-The key insight that makes ST practical: complexity is always relative to what you already know. This transforms abstract mathematical theory into concrete calculations that real systems can perform.
+But here's the crucial limitation: ST can recognize when you've found a good insight, but it can't tell you which concepts to combine in the first place. It's a powerful filter, not a generator. This suggests we need an architecture that maximizes filtering opportunities while minimizing generation costs.
 
 ## Why ST Enables a Two-Phase Discovery Architecture
 
-ST solves both of Gwern's problems through a two-phase approach that reduces search complexity AND provides principled evaluation:
+We can use ST to solve both of Gwern's problems through a two-phase approach that reduces search complexity AND provides principled evaluation:
 
-**Phase 1: Find Valid Puzzles**
-- Generate 2-concept combinations from your knowledge base
-- Ask LLM: "What puzzle does this combination suggest?"
-- **Verify with ST**: Does this create a genuine puzzle (high unexpectedness score)?
-- **Key insight**: ST can distinguish real puzzles from pseudo-puzzles that just sound intriguing
+**Phase 1: Search for Valid Puzzles**
+- **Search space**: All concept combinations from your knowledge base  
+- **Search strategy**: Start with smaller combinations, expand systematically
+- **Generation**: Ask LLM: "What puzzle does this combination suggest?"
+- **Evaluation**: ST filters for genuine puzzles (high unexpectedness score)
+- **Terminate**: When sufficient puzzles found or search budget exhausted
 
-**Phase 2: Solve Validated Puzzles**  
-- For each validated puzzle, add one new concept at a time
-- Ask LLM: "Does this solve the puzzle?"
-- **Verify with ST**: Does the LLM explanation create compression gain (collapse complexity)?
-- **Key insight**: ST can distinguish real insights from sophisticated-sounding but shallow explanations
+**Phase 2: Search for Insights**  
+- **Search space**: For each validated puzzle, all combinations of additional concepts
+- **Search strategy**: Start with 0 additional concepts, expand systematically  
+- **Generation**: Ask LLM: "What insight explains this puzzle given these concepts?"
+- **Evaluation**: ST filters for genuine insights (compression gain)
+- **Terminate**: When insight found or search budget exhausted
 
-This solves the evaluation problem that pure LLM approaches can't handle. While an LLM might rate "Why do teenagers keep messy rooms?" and "Why do organisms fit environments perfectly?" as equally interesting puzzles, ST provides mathematical criteria: the second creates massive unexpectedness (simple to observe, should be nearly impossible to explain with available mechanisms), while the first doesn't.
+The key advantage: ST addresses both of Gwern's problems. It provides principled evaluation criteria (distinguishing genuine insights from sophisticated noise), and its filtering in Phase 1 enables mathematical decomposition of the search space. Instead of searching all possible combinations directly, we can split the problem hierarchically.
 
-Here's why this dramatically reduces search space:
+Here's why this dramatically reduces computational cost:
 
-**Traditional approach** for 10 concepts, 3-concept insights:
-- Search space: C(10,3) = 120 combinations
-- All evaluated simultaneously
+**Traditional approach**:
+- Search all concept combinations for insights directly
+- Apply expensive insight generation to every combination up to some size limit
 
 **Two-phase approach**:
-- **Phase 1**: C(10,2) = 45 combinations → find valid puzzles
-- **Phase 2**: For each puzzle, try 8 remaining concepts
-- **Total search**: 45 + (valid_puzzles × 8)
+- **Phase 1**: Search concept combinations for puzzles  
+- **Phase 2**: Search additional concepts for insights, but only for validated puzzles
+- **Total cost**: C(n,k1) + (valid_puzzles × C(remaining,k2))
 
-The key insight: **valid puzzles are rare**. Most concept pairs don't form genuine puzzles under ST's criteria. If only 3 out of 45 combinations create valid puzzles, your total search becomes 45 + (3 × 8) = 69 evaluations instead of 120.
+The key insight: **mathematical decomposition reduces total combinations**. Instead of searching C(n,k1+k2) combinations directly, you search C(n,k1) + (valid_puzzles × C(remaining,k2)). Since **valid puzzles are rare**, the second term is much smaller than the original exponential search space.
 
-But the advantage compounds exponentially as concepts increase:
+The advantage compounds as concepts increase:
 
-**For 100 concepts, 4-concept insights:**
-- Traditional: C(100,4) = 3.9 million combinations  
-- Two-phase: C(100,2) = 4,950 + (valid_puzzles × 98 remaining concepts)
-- If 1% form valid puzzles: 4,950 + (50 × 98) = 9,850 evaluations
+**Example with 1000 concepts, 4-concept insights (2 for puzzle + 2 for solution):**
+- Traditional: C(1000,4) = 41,417,124,750 combinations
+- Two-phase: C(1000,2) + (valid_puzzles × C(998,2)) = 499,500 + (valid_puzzles × 497,503)
 
-That's a **400x reduction** in search space.
+**How rare are valid puzzles?** Most concept combinations like "bicycle + quantum mechanics" or "pizza + weather patterns" don't suggest meaningful puzzles that meet ST's criteria (high unexpectedness with simple descriptions). Valid puzzles should be genuinely rare—perhaps 0.1% or even 0.01% of combinations.
 
-This works because real insights have compositional structure. Darwin didn't randomly combine four concepts—he first recognized the adaptation puzzle (organisms perfectly fit environments), then found the missing piece (Malthus's population pressure) that solved it.
+- If 0.1% form valid puzzles: 499,500 + (500 × 497,503) = ~249 million combinations  
+- If 0.01% form valid puzzles: 499,500 + (50 × 497,503) = ~25 million combinations
 
-The approach transforms random concept-shuffling into targeted puzzle-solving:
+**The rarer valid puzzles are, the more dramatic the computational advantage becomes.**
 
-**Gwern's approach**: Try millions of combinations → "sky color + pizza ingredients + bicycle gears"
-**Two-phase approach**: Find puzzles first → "Why do organisms fit environments so perfectly?" → search for missing pieces → "population pressure + competition"
-
-**Important limitation**: The two-phase approach dramatically reduces search complexity but doesn't eliminate exponentiality entirely. We're still dealing with exponential growth—just with much better constants and aggressive pruning.
-
-As the knowledge base grows or we seek more complex insights (4+ concepts), the search space can still become intractable. The advantage comes from the rarity of valid puzzles, but if your domain has many legitimate puzzles, Phase 2 could still explode combinatorially.
-
-This makes the approach most promising for constrained domains where puzzle density is manageable.
+**Important limitation**: The two-phase approach dramatically reduces search complexity but doesn't eliminate exponentiality entirely. We're still dealing with exponential growth—just with much better constants and aggressive pruning. The advantage comes from the rarity of valid puzzles, but if your domain has many legitimate puzzles, Phase 2 could still explode combinatorially.
 
 ## The Two-Phase Approach in Action: Darwin's Breakthrough
 
-Let's trace how the two-phase approach would work on history's most famous breakthrough. *(Note: This shows the algorithm's logic—we're not claiming Darwin followed this process.)*
+Let's trace how the two-phase approach would work on the adaptation puzzle that led to evolution theory. *(Note: This simulates our algorithm—we're not claiming anyone followed this process.)*
 
-**Phase 1: Puzzle Detection**
-Darwin had been collecting puzzling observations for years. Consider this concept combination:
-- **Concepts**: "organism traits" + "environmental conditions"
-- **LLM puzzle question**: "What puzzle does this combination suggest?"
-- **LLM response**: "Why do organisms have traits that perfectly match their environments?"
-- **ST evaluation**: High unexpectedness score (simple pattern to observe: perfect fit everywhere, but should require countless separate explanations given available mechanisms)
+**Phase 1 Complete**: Previous naturalists had identified a validated puzzle: "Why do organisms have traits that perfectly match their environments?" This creates massive unexpectedness under ST criteria—simple to observe (perfect fit everywhere), but should require countless separate explanations given available mechanisms.
 
-**Validated puzzle identified**: Perfect organism-environment fit requires explanation.
+**Phase 2: Insight Generation**
+Now systematically apply expensive computational resources to this validated puzzle:
+- **0 additional concepts**: Try generating insights from puzzle alone
+  - "Organisms inherit acquired traits" → ST evaluation: Some compression, insufficient
+- **1 additional concept**: Try each remaining concept with the puzzle
+  - + "Divine creation" → "God designed perfect fit" → ST evaluation: Some compression, but creates new complexity puzzle (how does the designer work?)
+  - + "Population pressure" → "Competition drives selection for fit" → ST evaluation: Massive compression gain!
 
-**Phase 2: Solution Search**
-Now search for concepts that could solve this puzzle:
-- **Puzzle + "divine creation"** → No compression gain (just pushes explanation back)
-- **Puzzle + "use and disuse"** → Some compression, but doesn't explain precision
-- **Puzzle + "population pressure"** → Massive compression gain!
+**Search stops**: Breakthrough insight found at 1 additional concept level.
 
-**October 1838**: Reading Malthus on population pressure provides the missing piece. One simple mechanism—variation + inheritance + overproduction + competition—explains thousands of observations.
+**The breakthrough**: Population pressure + variation + inheritance creates a simple mechanism explaining thousands of complex observations.
 
-**ST's solution evaluation**: Massive compression gain. Many complex explanations collapsed into one simple rule. High unexpectedness score (simple to state, took humanity millennia to discover).
+**ST's insight evaluation**: Massive compression gain achieved. What required countless separate explanations now follows from one simple rule.
 
-This is exactly what the two-phase approach identifies: valid puzzles in Phase 1, then compression-creating solutions in Phase 2. The key insight—Darwin had recognized the puzzle through careful observation, but the algorithmic approach could systematically detect such puzzles in concept combinations.
+This demonstrates the two-phase approach: systematic puzzle search identifies valid targets (Phase 1), then systematic insight search focuses computational resources where they matter most (Phase 2). The algorithm would systematically detect validated puzzles and direct search efforts to find the missing insights.
 
-This demonstrates the practical power of compositional search.
+This demonstrates the practical power of hierarchical search over direct search.
 
 ## What Can We Actually Build Today?
 
 We have a concrete algorithmic approach, but implementation challenges remain.
 
-**The algorithm is clear**: Two-phase compositional search using LLMs for generation and ST for evaluation. Phase 1 finds valid puzzles, Phase 2 searches for solutions.
+**The algorithm is clear**: Two-phase hierarchical search using LLMs for generation and ST for evaluation. Phase 1 searches concept combinations for valid puzzles, Phase 2 searches additional concepts for insights (but only for validated puzzles).
 
 **What already works**: AI can generate creative concept combinations and evaluate puzzles/solutions when prompted appropriately. Modern LLMs successfully perform both tasks—this validates the basic feasibility.
 
@@ -157,9 +145,9 @@ The vision is compelling: research tools that actively support discovery rather 
 
 We have more than just the pieces for a solution to Gwern's discovery problem—we have a concrete algorithmic approach. ST provides mathematical principles for recognizing insights. LLMs can generate concept combinations and evaluate puzzles/solutions. The two-phase architecture dramatically reduces search complexity.
 
-The most promising immediate step: build systems that implement the two-phase approach using language models to approximate ST's complexity calculations, then test whether compositional search actually achieves the predicted efficiency gains.
+The most promising immediate step: build systems that implement the two-phase approach using language models to approximate ST's complexity calculations, then test whether hierarchical search actually achieves the predicted efficiency gains.
 
-This isn't just theoretical—it's testable and implementable. Start with constrained domains where you can verify results. Build two-phase discovery tools. Test whether ST-guided compositional search actually outperforms brute-force combination generation.
+This isn't just theoretical—it's testable and implementable. Start with constrained domains where you can verify results. Build two-phase discovery tools. Test whether ST-guided hierarchical search actually outperforms direct insight generation.
 
 The computational advantage is clear in theory. The question is whether it holds up in practice.
 
