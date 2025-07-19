@@ -6,7 +6,7 @@ Picture yourself stuck on a problem for weeks, then while making coffee, two unr
 
 But Gwern's approach has two critical gaps. First, while he can check if ideas are coherent and measure their novelty, he leaves "usefulness" completely undefined. Second, randomly selecting concepts to combine is computationally inefficient—we need smarter targeting.
 
-This is where [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) becomes relevant. ST offers a promising mathematical approach to Gwern's usefulness problem—providing a theoretical framework to distinguish meaningful insights from meaningless associations. ST addresses one part of the search problem—recognizing when concepts form coherent puzzles—but leaves another part unsolved: the systematic generation of which concepts to consider combining in the first place.
+This is where [Simplicity Theory (ST)](https://simplicitytheory.telecom-paris.fr/) becomes relevant. ST offers a promising mathematical approach to Gwern's usefulness problem—providing a theoretical framework to distinguish meaningful insights from meaningless associations. ST addresses one part of the search problem—recognizing when concepts form coherent puzzles—but leaves another part unsolved: the systematic generation of which concepts to consider combining in the first place.
 
 ## The Framework: Simplicity Theory
 
@@ -42,12 +42,12 @@ The key insight that makes ST computationally tractable is that complexity is al
 
 ## The Core Improvement: From Blind Search to Targeted Search—But Still Exponential
 
-To see why Simplicity Theory improves but doesn't solve the search problem, consider what different approaches would actually produce:
+To see why ST improves but doesn't solve the search problem, consider what different approaches would actually produce:
 
 - **Blind search**: Randomly select articles about "sky color" and "pizza ingredients" → "Blue sky pizza cheese"
 - **ST-guided search**: First identify puzzles (Darwin's adaptation observations), then search for missing pieces (finding Malthus)
 
-Simplicity Theory provides a crucial improvement over Gwern's brute-force approach for puzzle recognition. While Gwern accepts massive computational waste by randomly combining all concepts, ST can first identify which concepts form puzzles, dramatically narrowing the search space for the recognition phase. Darwin's success demonstrates this: he recognized his adaptation observations formed a puzzle, then targeted his search for the missing mechanism.
+ST provides a crucial improvement over Gwern's brute-force approach for puzzle recognition. While Gwern accepts massive computational waste by randomly combining all concepts, ST can first identify which concepts form puzzles, dramatically narrowing the search space for the recognition phase. Darwin's success demonstrates this: he recognized his adaptation observations formed a puzzle, then targeted his search for the missing mechanism.
 
 But here's the key limitation: **the search challenge scales exponentially with the complexity of discovery type**. Darwin-style breakthroughs—where a recognized scientific puzzle needs one key missing piece—become quite manageable. The adaptation mystery was widely acknowledged in Darwin's era; adding Malthus's population pressure mechanism solved a known problem. Multi-puzzle breakthroughs requiring simultaneous recognition and connection of several unrecognized patterns remain exponentially challenging.
 
