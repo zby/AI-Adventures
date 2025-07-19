@@ -92,9 +92,11 @@ Three main approaches look promising:
 
 3. **Direct LLM Evaluation:** A simpler option: just ask an LLM to rate an insight's unexpectedness using ST's formula. For example: "How unexpected is this according to Simplicity Theory?" This isn't perfectly reliable, but might work better than asking if the insight is useful. Sometimes a rough method that works everywhere is better than a precise one that only works in special cases.
 
-**Validation:** To check the basic idea, we tested if LLMs could connect Gwern's essay and Simplicity Theory on their own. All five LLMs tested independently found the core argument of this article—that ST could solve Gwern's evaluation problem (see Appendix). This shows that AI daydreaming works in concept, though it doesn't prove the ST complexity approximation works yet.
+### Validation
+To check the basic idea, we tested if LLMs could connect Gwern's essay and Simplicity Theory on their own. All five LLMs tested independently found the core argument of this article—that ST could solve Gwern's evaluation problem (see Appendix). This shows that AI daydreaming works in concept, though it doesn't prove the ST complexity approximation works yet.
 
-**Implementation path:** Build the system using LLM approximations of ST, then test if it gives the predicted computational advantages. The next step is to build the system using LLM approximations of ST, then test if it gives the predicted computational advantages. The big breakthrough is conceptual. The hard part is making it robust and scalable in practice.
+### Implementation path
+Build the system using LLM approximations of ST, then test if it gives the predicted computational advantages. The next step is to build the system using LLM approximations of ST, then test if it gives the predicted computational advantages. The big breakthrough is conceptual. The hard part is making it robust and scalable in practice.
 
 ## What This Could Enable
 
