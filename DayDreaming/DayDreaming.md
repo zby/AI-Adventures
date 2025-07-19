@@ -6,7 +6,7 @@ Picture yourself stuck on a problem for weeks, then while making coffee, two unr
 
 But Gwern's approach has two critical gaps. First, while he can check if ideas are coherent and measure their novelty, he leaves "usefulness" completely undefined. Second, randomly selecting concepts to combine is computationally inefficient—we need smarter targeting.
 
-This is where [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) becomes relevant. ST solves Gwern's "usefulness" problem definitively—it provides a mathematical framework to distinguish meaningful insights from meaningless associations. ST also improves the exponential search challenge: by first identifying which concepts form puzzles (opportunities for compression gain), it can dramatically narrow the search space before attempting combinations.
+This is where [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) becomes relevant. ST offers a promising mathematical approach to Gwern's "usefulness" problem—providing a theoretical framework to distinguish meaningful insights from meaningless associations. ST also potentially improves the exponential search challenge: by first identifying which concepts form puzzles (opportunities for compression gain), it could dramatically narrow the search space before attempting combinations.
 
 ## The Framework: Simplicity Theory
 
@@ -34,7 +34,7 @@ We can identify opportunities for compression gain by looking for situations whe
 
 ### Observer-Dependent Complexity: Making ST Practical
 
-The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge. The number sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical calculations for real systems.
+The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge (Dessalles, 2008; Chater & Vitányi, 2003). The number sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical calculations for real systems, as demonstrated in computational implementations of ST for relevance detection (Dessalles, 2013).
 
 
 
@@ -102,37 +102,49 @@ Simplicity Theory addresses Gwern's two challenges very differently—providing 
 
 ## Implementation Reality: What Can We Actually Build?
 
-Can we build AI that discovers like Darwin did? The question cuts to the heart of whether computational systems can replicate the leap from scattered observations to transformative insight. Here's what the current landscape looks like:
+Can we build AI that discovers like Darwin did? The question cuts to the heart of whether computational systems can replicate the leap from scattered observations to transformative insight. The path from theoretical framework to working system requires bridging three critical gaps:
 
-### What Already Works: Basic Daydreaming
+### Building Block 1: Validated Concept Combination
 
-The core concept of AI "daydreaming"—combining disparate concepts to generate novel insights—has been demonstrated. Modern LLMs can successfully make meaningful connections between unrelated sources when prompted appropriately (see Appendix for empirical evidence). This validates Gwern's basic premise that AI systems can perform creative concept combination.
+**What Works**: Modern LLMs successfully perform creative concept combination when prompted appropriately (see Appendix for empirical evidence). This validates Gwern's basic premise that AI systems can generate novel connections between disparate sources.
 
-### What's Theoretical: ST-Guided Evaluation
+**Why This Matters**: Concept combination is the foundation—without it, no discovery system is possible. But raw combination generates mostly noise, creating the filtering challenge that ST aims to solve.
 
-The [CompLog framework](https://arxiv.org/abs/2307.15453) provides a proof-of-concept implementation for evaluating proposed connections through compression ratios, demonstrating ST's computational feasibility in principle. However, CompLog requires ideas to be encoded in formal logic representations—it cannot directly process natural language text without significant preprocessing to extract logical relationships. This encoding requirement means we don't yet have a practical solution for evaluating insights in existing text-based knowledge systems, limiting CompLog to constrained experimental domains.
+### Building Block 2: The Evaluation Bridge
 
-**LLM-Based Unexpectedness Estimation**: The most promising approach involves using language models to estimate U = Cv - C through computational proxies:
-• Cv ≈ negative log-prob under the base LLM (how hard to produce)
+**The Challenge**: Moving from "can generate combinations" to "can evaluate insights" requires computational implementation of ST's unexpectedness scoring.
+
+**Current Status**: Two approaches show promise but face different limitations:
+
+**Formal Logic Route**: The [CompLog framework](https://arxiv.org/abs/2307.15453) demonstrates ST's computational feasibility through compression ratios in formal logic. Proven to work, but requires manual encoding of concepts into logic representations—impractical for natural language knowledge systems.
+
+**LLM Approximation Route**: Using language models to estimate U = Cv - C through computational proxies:
+• Cv ≈ negative log-prob under the base LLM (how hard to produce)  
 • C ≈ token-compression length or min-description under a lightweight coder (how easy to describe)
 
-This approach could work directly with natural language text, bypassing CompLog's encoding requirements. However, it remains unproven whether LLMs can capture the precise complexity relationships that ST requires for reliable insight evaluation.
+This approach works directly with natural language, bypassing CompLog's encoding bottleneck. However, it remains unproven whether LLMs can capture the precise complexity relationships ST requires for reliable filtering.
 
-### What's Speculative: Puzzle Detection
+**Why This Matters**: Without reliable evaluation, we're back to Gwern's original problem—no principled way to distinguish insights from noise.
 
-Beyond insight evaluation, another promising approach could help identify where breakthroughs are possible:
+### Building Block 3: Discovery Architecture
 
-**Compression Opportunity Detection**: Systems that scan for patterns with simple descriptions but complex explanations—the signature of puzzles ripe for breakthrough. This could work across contexts: monitoring research literature for emerging conceptual puzzles, or analyzing personal knowledge systems (Obsidian, Roam Research, Zettelkasten) to spot when accumulated notes form unexpectedness patterns. Such hybrid systems would combine human concept generation with AI insight recognition—researchers propose connections while AI evaluates compression gain.
+**The Vision**: Combine validated components into discovery-capable systems:
 
-If such puzzle-detection systems worked, they could transform discovery across domains. Which conceptual puzzles in today's research would be most ripe for breakthrough?
+**Puzzle Detection Systems**: Scan for patterns with simple descriptions but complex explanations—ST's signature of breakthrough opportunities. Applications range from monitoring research literature for emerging conceptual puzzles to analyzing personal knowledge systems (Obsidian, Roam Research) for unexpectedness patterns.
 
-### What Remains Unsolved: Multi-Concept Insights
+**Hybrid Discovery Systems**: Human concept generation paired with AI insight evaluation—researchers propose connections while AI evaluates compression gain, creating human-AI teams optimized for different aspects of discovery.
 
-The fundamental limitation is handling insights that require many simultaneous conceptual connections. While single-concept breakthroughs like Darwin's (adaptation puzzles + Malthus mechanism) could become tractable with ST-guided search, complex insights requiring multiple complementary concepts still face exponential scaling challenges.
+**Current Reality**: These remain largely speculative, dependent on solving the evaluation bridge problem first.
 
-### Summary: A Mixed Landscape
+### The Remaining Limitation: Multi-Concept Complexity
 
-We have **proven feasibility** for basic AI daydreaming, **theoretical frameworks** for insight evaluation, and **speculative approaches** for puzzle detection. The missing piece is reliable, practical implementation of ST-guided filtering—transforming promising theory into working systems.
+Even with working ST evaluation, insights requiring many simultaneous conceptual connections face exponential scaling challenges. Single-concept breakthroughs like Darwin's (adaptation puzzles + population theory) could become tractable, but complex multi-factor insights remain computationally intractable.
+
+### Implementation Status: Promising but Incomplete
+
+We have **validated components** (concept combination), **theoretical frameworks** (ST evaluation), and **architectural visions** (hybrid discovery systems). The critical missing piece is bridging theory to practice—developing reliable ST-guided filtering that works with natural language knowledge systems.
+
+The most promising path forward involves LLM-based approximation of ST metrics, but substantial empirical work is needed to validate whether this approach can reliably distinguish meaningful insights from sophisticated-sounding noise.
 
 ## Conclusion
 
