@@ -108,7 +108,8 @@ Can we build AI that discovers like Darwin did? The question cuts to the heart o
 
 The [CompLog framework](https://arxiv.org/abs/2307.15453) provides a working implementation for evaluating proposed connections through compression ratios, moving ST from pure theory toward testable systems. However, CompLog requires ideas to be encoded in formal logic representations—it cannot directly process natural language text articles without significant preprocessing to extract logical relationships. While this demonstrates ST's computational feasibility, the non-trivial encoding requirement means we don't yet have a practical solution for evaluating insights in existing text-based knowledge systems.
 
-**LLM-Based Unexpectedness Estimation**: This is why we propose experimenting with language models to estimate U = Cv - C through targeted prompts—asking for generation complexity ("Given what we knew in 1838, how difficult would Darwin's connection be to generate?") versus description complexity ("How simply can this be stated?"). A more direct computational approach (daydreamed by o3 - see the Appendix) could estimate U = Cv – C where:
+**LLM-Based Unexpectedness Estimation**: This is why we propose experimenting with language models to estimate U = Cv - C through targeted prompts.
+A more direct computational approach (daydreamed by o3 - see the Appendix):
 • Cv ≈ negative log-prob under the base LLM (how hard to produce)
 • C ≈ token-compression length or min-description under a lightweight coder (how easy to describe)
 
@@ -128,21 +129,23 @@ What remains beyond current capabilities is the core challenge that limits all d
 
 ## Conclusion
 
-We have some promising theory. Computational approaches are emerging. But lots of experimentation is required to know if this actually works in practice.
+We have promising theory and emerging computational approaches, but significant experimentation is required to determine if this actually works in practice.
 
-If it does? Picture an AI scanning every paper on arXiv in real-time, flagging compression opportunities as they emerge. Your Zettelkasten could highlight when scattered notes form unexpectedness patterns. Browser extensions that show unexpectedness ratings for research papers you read.
+If successful, several applications become possible:
 
-Email filters that prioritize high-compression insights. Social media algorithms that surface genuinely unexpected connections instead of engagement bait. Personal knowledge systems that learn your thinking patterns and flag when you're circling around puzzle pieces.
+**Research Tools**: AI systems could scan research literature for compression opportunities, knowledge management systems could flag when accumulated notes form unexpectedness patterns, and browser extensions could display unexpectedness ratings for papers.
 
-ST could also transform the reinforcement learning phase of LLM training. Mathematical problems are ideal for this approach because they provide objectively verifiable answers—you can automatically check if "42" is correct without human judgment. But developing insight generation capabilities has no equivalent: we typically rely on expensive human preference ratings to distinguish genuinely insightful responses from sophisticated-sounding nonsense. ST's compression gain metrics could fill this gap, providing automatic verification of conceptual breakthroughs and training LLMs to generate genuine insights rather than just fluent text.
+**Information Systems**: Email filters could prioritize high-compression insights, and social media algorithms could surface genuinely unexpected connections rather than engagement-driven content.
 
-Every research tool becomes a discovery engine. The possibilities are endless—if we can make it work.
+**AI Training**: ST could address a fundamental challenge in LLM development. While mathematical problems provide objectively verifiable answers, insight generation typically requires expensive human preference ratings to distinguish genuine insights from sophisticated-sounding nonsense. ST's compression gain metrics could provide automatic verification, enabling training toward genuine discovery rather than just fluent text.
+
+The potential is significant: research tools that actively support discovery rather than just information retrieval. But substantial work remains to validate whether these theoretical frameworks translate into practical systems.
 
 What will you build?
 
 ----
 ----
-## Appendix A
+## Appendix
 I tested if LLMs would daydream my idea for this article if given Gwerns essay and Simplicity Theory official web page. I used this simple prompt:
 ```
 Please read https://simplicitytheory.telecom-paris.fr/ Simplicity Theory Simplicity Theory   and https://gwern.net/ai-daydreaming LLM Daydreaming LLM Daydreaming  
