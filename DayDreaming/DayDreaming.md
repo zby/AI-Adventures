@@ -34,7 +34,7 @@ We can identify opportunities for compression gain by looking for situations whe
 
 ### Observer-Dependent Complexity: Making ST Practical
 
-The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge (Dessalles, 2008; Chater & Vitányi, 2003). The number sequence "12-22-27-37-38-42" has high complexity for a general observer, but minimal complexity for the person who chose those numbers—it's simply "my numbers." This transforms abstract algorithmic complexity into practical calculations for real systems, as demonstrated in computational implementations of ST for relevance detection (Dessalles, 2013).
+The key insight that makes ST computationally tractable is that complexity is always relative to the observer's knowledge (Dessalles, 2008; Chater & Vitányi, 2003). This transforms abstract algorithmic complexity into practical calculations for real systems, as demonstrated in computational implementations of ST for relevance detection (Dessalles, 2013).
 
 
 
@@ -61,33 +61,17 @@ The widespread fact that organisms are exquisitely fitted to their environments 
 
 But explaining *why* this pattern exists requires invoking separate causal mechanisms for each case—divine creation events, Lamarckian use/disuse, climate-driven modifications. This signals massive opportunity for compression gain, flagging this research direction as ripe for theoretical breakthrough.
 
-Darwin had accumulated observations that all pointed to this same puzzling pattern:
-
-- Geographic variation: Finch beaks across Galápagos islands, mockingbird differences
-- Domestication experiments: Pigeon breeding, livestock trait inheritance  
-- Fossil succession: Ancient species related but distinct from modern forms
-- Biogeographic puzzles: Why similar environments had different species
-- Organism-environment fit: Exquisite adaptations everywhere he looked
-
-Each adaptation appeared as a separate puzzle piece. His world-model needed case-by-case explanations—divine creation events, Lamarckian use/disuse, climate shocks—a patchwork requiring increasingly complex explanations.
+Darwin had accumulated observations that all pointed to this same puzzling pattern: geographic variation (Galápagos finches), domestication experiments (pigeon breeding), fossil succession, and exquisite organism-environment fit everywhere he looked. Each adaptation appeared as a separate puzzle piece requiring case-by-case explanations—divine creation events, Lamarckian use/disuse, climate shocks—a patchwork of increasingly complex mechanisms.
 
 Then he read Malthus on population growth. Population pressure + resource competition + heritable variation → differential survival → accumulated adaptation over generations.
 
-**Compression gain in action**: Like discovering one master key opens all the locks instead of carrying 50 individual keys. Darwin found the pattern that made thousands of observations suddenly click.
+**Compression gain in action**: Darwin found one mechanism that explained thousands of separate observations. A vast pattern collapsed to a short causal recipe: Variation + Heredity + Overproduction + Competition → Selection → Cumulative Change.
 
-A vast pattern collapsed to a short causal recipe:
-
-Variation + Heredity + Overproduction + Competition → Selection → Cumulative Change
-
-This **illustrates how ST's insight recognition function might work**. In this retrospective analysis, Darwin's breakthrough appears easy to describe (the simple causal recipe above) but would be extraordinarily difficult to generate without the prepared mind. The requirements to produce this insight were massive—years of biological observation, exposure to Malthus at the right moment, and the cognitive ability to see the connection. But the insight itself is minimal—a short causal mechanism that explains thousands of observations.
-
-**Crucially, this is post-hoc pattern-fitting**: we cannot know whether ST's framework would have prospectively flagged adaptation research as ripe for breakthrough or identified the Malthus connection as valuable before Darwin made it.
-
-*Note: ST isn't a perfect filter—some high-unexpectedness events will be meaningless curiosities rather than breakthrough opportunities.*
+This illustrates ST's insight recognition framework. Darwin's breakthrough appears easy to describe but would be extraordinarily difficult to generate without the prepared mind—years of biological observation, exposure to Malthus at the right moment, and the cognitive ability to see the connection.
 
 So what does this mean for building real AI discovery systems?
 
-## Where ST Actually Helps: Recognition Over Generation
+## Implementation Reality: What Can We Actually Build?
 
 Simplicity Theory addresses Gwern's two challenges very differently—providing a principled approach to one while making limited progress on the other.
 
@@ -101,8 +85,6 @@ Simplicity Theory addresses Gwern's two challenges very differently—providing 
 - ST addresses puzzle recognition—identifying when existing concepts form coherent patterns that signal compression opportunities
 - However, ST leaves unsolved the systematic generation problem: determining which specific concepts are worth considering for combination in the first place
 - ST excels at evaluating proposed combinations but provides minimal guidance for generating them—the crucial middle step of navigating the exponential search space remains largely unsolved
-
-## Implementation Reality: What Can We Actually Build?
 
 Can we build AI that discovers like Darwin did? The question cuts to the heart of whether computational systems can replicate the leap from scattered observations to transformative insight. The path from theoretical framework to working system requires bridging three critical gaps:
 
@@ -151,6 +133,8 @@ Even with working ST evaluation, different discovery types face different scalin
 We have **validated components** (concept combination), **theoretical frameworks** (ST evaluation), and **architectural visions** (hybrid discovery systems). The critical missing piece is bridging theory to practice—developing reliable ST-guided filtering that works with natural language knowledge systems.
 
 The most promising path forward involves LLM-based approximation of ST metrics, but substantial empirical work is needed to validate whether this approach can reliably distinguish meaningful insights from sophisticated-sounding noise.
+
+## Applications and Future Directions
 
 ## Conclusion
 
