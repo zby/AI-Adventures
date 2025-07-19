@@ -12,7 +12,7 @@ This is where Simplicity Theory helps. It gives us a mathematical filter for rea
 
 ## How to Recognize a Breakthrough: Simplicity Theory
 
-Walk into a teenager's bedroom and find it spotless. Easy to describe: "completely clean room." But, knowing teenagers, this should be almost impossible. That gap between "easy to describe" and "hard to explain" signals something interesting. This is the core of [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/)—Jean-Louis Dessalles' framework for spotting breakthroughs. ST measures this gap with a simple formula:
+Walk into a teenager's bedroom and find it spotless. Easy to describe: "completely clean room." But, knowing teenagers, this should be almost impossible. That gap between "easy to describe" and "hard to explain" signals something interesting. This is the core of [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/)—Jean-Louis Dessalles' framework for spotting surprising ideas. ST measures this gap with a simple formula:
 
 **U = Cv - C**
 
