@@ -6,16 +6,18 @@ Picture yourself stuck on a problem for weeks, then while making coffee, two unr
 
 But Gwern's approach has two critical gaps. First, while he can check if ideas are coherent and measure their novelty, he leaves "usefulness" completely undefined. Second, randomly selecting concepts to combine is computationally inefficient—we need smarter targeting.
 
-This is where [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) becomes relevant. ST offers a promising mathematical approach to Gwern's "usefulness" problem—providing a theoretical framework to distinguish meaningful insights from meaningless associations. ST addresses one part of the search problem—recognizing when concepts form coherent puzzles (opportunities for compression gain)—but leaves another part unsolved: the systematic generation of which concepts to consider combining in the first place.
+This is where [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) becomes relevant. ST offers a promising mathematical approach to Gwern's usefulness problem—providing a theoretical framework to distinguish meaningful insights from meaningless associations. ST addresses one part of the search problem—recognizing when concepts form coherent puzzles (opportunities for compression gain)—but leaves another part unsolved: the systematic generation of which concepts to consider combining in the first place.
 
 ## The Framework: Simplicity Theory
 
-[Jean-Louis Dessalles' Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) provides a mathematical approach to recognizing breakthrough insights through an **unexpectedness score**: **U = Cv - C**
+[Jean-Louis Dessalles' Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) provides a mathematical approach to recognizing breakthrough insights through ST's unexpectedness score: **U = Cv - C**
 
 Where:
 - Cv (generation complexity): Length of the shortest specification the world would need to generate this situation under current causal constraints
 - C (description complexity): Length of the shortest description that uniquely identifies the outcome
 - U (unexpectedness score): The gap that signals "something structurally significant is happening"
+
+ST identifies puzzles (compression opportunities) by recognizing when simple patterns require complex explanations—signaling areas where breakthrough insights could collapse many separate mechanisms into unified explanations.
 
 Think of it like walking into a teenager's bedroom and finding it spotless—simple to describe, but based on what you know about teenagers, this should be nearly impossible. That gap signals "something interesting is happening here."
 
@@ -43,7 +45,7 @@ The key insight that makes ST computationally tractable is that complexity is al
 To see why Simplicity Theory improves but doesn't solve the search problem, consider what different approaches would actually produce:
 
 - **Blind search**: Randomly select articles about "sky color" and "pizza ingredients" → "Blue sky pizza cheese"
-- **ST-guided search**: First identify puzzle pieces (Darwin's adaptation observations), then search for missing pieces (finding Malthus)
+- **ST-guided search**: First identify puzzles (Darwin's adaptation observations), then search for missing pieces (finding Malthus)
 
 Simplicity Theory provides a crucial improvement over Gwern's brute-force approach for puzzle recognition. While Gwern accepts massive computational waste by randomly combining all concepts, ST can first identify which concepts form puzzles, dramatically narrowing the search space for the recognition phase. Darwin's success demonstrates this: he recognized his adaptation observations formed a puzzle, then targeted his search for the missing mechanism.
 
@@ -51,34 +53,28 @@ But here's the key limitation: **the search challenge scales exponentially with 
 
 ## What Made Darwin's Insight Special: A Retrospective Thought Experiment
 
-To illustrate how Simplicity Theory's evaluation framework might work in practice, let's examine what distinguishes a breakthrough insight from meaningless word association. **Important caveat: This is purely retrospective analysis—a thought experiment showing how ST's framework could theoretically apply to known breakthroughs, not evidence that ST would have identified this insight prospectively.** We're fitting Darwin's well-documented discovery to ST's framework after the fact to illustrate the theory's concepts.
+To illustrate how ST's evaluation framework might work in practice, let's examine what distinguishes a breakthrough insight from meaningless word association. **Important caveat: This is purely retrospective analysis—a thought experiment showing how ST's framework could theoretically apply to known breakthroughs, not evidence that ST would have identified this insight prospectively.**
 
-The key insight is recognizing when you can efficiently describe patterns but lack causal mechanisms to explain why those patterns exist—this signals opportunities for compression gain.
+Consider what happened in October 1838. Darwin had been wrestling with the adaptation puzzle for years—organisms are exquisitely fitted to their environments, easy to describe but requiring separate explanations for each case (divine creation, Lamarckian use/disuse, climate modifications). This signaled massive compression opportunities.
 
-Consider what happened in October 1838. Darwin had been wrestling with the mystery of adaptation for years, accumulating observations that defied easy explanation. But crucially, he had first recognized that adaptation itself was deeply unexpected under existing theories.
-
-The widespread fact that organisms are exquisitely fitted to their environments is easy to describe but extraordinarily difficult to explain without evolution. You can summarize the pattern in a few words: "species are well-adapted to their ecological niches." 
-
-But explaining *why* this pattern exists requires invoking separate causal mechanisms for each case—divine creation events, Lamarckian use/disuse, climate-driven modifications. This signals massive opportunity for compression gain, flagging this research direction as ripe for theoretical breakthrough.
-
-Darwin had accumulated observations that all pointed to this same puzzling pattern: geographic variation (Galápagos finches), domestication experiments (pigeon breeding), fossil succession, and exquisite organism-environment fit everywhere he looked. Each adaptation appeared as a separate puzzle piece requiring case-by-case explanations—divine creation events, Lamarckian use/disuse, climate shocks—a patchwork of increasingly complex mechanisms.
+Darwin had accumulated observations pointing to this puzzle: Galápagos finches, pigeon breeding, fossil succession, organism-environment fit everywhere. Each required separate explanations—a patchwork of complex mechanisms.
 
 Then he read Malthus on population growth. Population pressure + resource competition + heritable variation → differential survival → accumulated adaptation over generations.
 
-**Compression gain in action**: Darwin found one mechanism that explained thousands of separate observations. A vast pattern collapsed to a short causal recipe: Variation + Heredity + Overproduction + Competition → Selection → Cumulative Change.
+**Compression gain in action**: One mechanism explained thousands of observations. The vast pattern collapsed to: Variation + Heredity + Overproduction + Competition → Selection → Cumulative Change.
 
-This illustrates ST's insight recognition framework. Darwin's breakthrough appears easy to describe but would be extraordinarily difficult to generate without the prepared mind—years of biological observation, exposure to Malthus at the right moment, and the cognitive ability to see the connection.
+This illustrates U = Cv - C in practice—easy to describe but extraordinarily difficult to generate without years of preparation and the right moment of connection.
 
 So what does this mean for building real AI discovery systems?
 
 ## Implementation Reality: What Can We Actually Build?
 
-Simplicity Theory addresses Gwern's two challenges very differently—providing a principled approach to one while making limited progress on the other.
+ST addresses Gwern's two challenges very differently—providing a principled approach to one while making limited progress on the other.
 
 **What ST Addresses Directly**: **Insight Recognition**
 - ST provides a concrete mathematical framework to distinguish meaningful insights from meaningless associations through compression gain detection
-- This provides a principled approach to Gwern's "usefulness" filter problem—offering a theoretical foundation for evaluating whether a proposed connection represents genuine discovery
-- What distinguished Darwin's "population theory + adaptation puzzles" from our hypothetical "blue sky + pizza cheese"? Both involve connecting previously separate concepts and both produce something novel. Yet one launched a scientific revolution while the other is meaningless noise. Darwin's connection achieved compression gain while random word combinations typically create no explanatory value
+- This provides a principled approach to Gwern's usefulness problem—offering a theoretical foundation for evaluating whether a proposed connection represents genuine discovery
+- What distinguished Darwin's "population theory + adaptation puzzle" from our hypothetical "blue sky + pizza cheese"? Both involve connecting previously separate concepts and both produce something novel. Yet one launched a scientific revolution while the other is meaningless noise. Darwin's connection achieved compression gain while random word combinations typically create no explanatory value
 - [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates these calculations are feasible in constrained domains through logic programming, though practical implementation for natural language remains an open challenge
 
 **What ST Improves But Doesn't Solve**: **Concept Generation**
@@ -103,12 +99,12 @@ Can we build AI that discovers like Darwin did? The question cuts to the heart o
 **Formal Logic Route**: The [CompLog framework](https://arxiv.org/abs/2307.15453) demonstrates ST's computational feasibility through compression ratios in formal logic. Proven to work, but requires manual encoding of concepts into logic representations—impractical for natural language knowledge systems.
 
 **LLM Approximation Route**: Using language models to estimate U = Cv - C through computational proxies:
-• Cv ≈ negative log-prob under the base LLM (how hard to produce)  
-• C ≈ token-compression length or min-description under a lightweight coder (how easy to describe)
+• Cv ≈ negative log-prob under the base LLM  
+• C ≈ token-compression length or min-description under a lightweight coder
 
 This approach works directly with natural language, bypassing CompLog's encoding bottleneck. However, it remains unproven whether LLMs can capture the precise complexity relationships ST requires for systematic filtering at scale.
 
-**Why This Matters**: While LLMs can perform basic insight evaluation (recognizing interesting vs. boring connections), they lack systematic principles for distinguishing breakthrough insights from sophisticated-sounding but ultimately shallow combinations. ST provides the mathematical framework for principled evaluation that could solve Gwern's filtering problem.
+**Why This Matters**: While LLMs can perform basic insight evaluation (recognizing interesting vs. boring connections), they lack systematic principles for distinguishing breakthrough insights from sophisticated-sounding but ultimately shallow combinations. ST provides the mathematical framework for principled evaluation that could solve Gwern's usefulness problem.
 
 ### Building Block 3: Discovery Architecture
 
@@ -122,7 +118,7 @@ Even with working ST evaluation, different discovery types face different scalin
 
 **Recognized puzzle + missing piece breakthroughs** like Darwin's (adaptation mystery + population mechanism) could become tractable—the puzzle was already acknowledged, requiring only one key connection.
 
-**Multi-puzzle breakthroughs** requiring simultaneous recognition and connection of several unrecognized patterns remain computationally intractable due to exponential search spaces. For example, Einstein's relativity required recognizing that space-time, mass-energy equivalence, and gravity were all interconnected puzzles that needed to be solved together—not widely acknowledged as connected problems beforehand.
+**Multi-puzzle breakthroughs** requiring simultaneous recognition and connection of several unrecognized patterns remain computationally intractable due to exponential search spaces. For example, Einstein's relativity required recognizing that space-time, mass-energy equivalence, and gravity were all interconnected puzzles that needed to be solved together—not widely acknowledged as connected puzzles beforehand.
 
 ### Implementation Status: Promising but Incomplete
 
@@ -134,7 +130,7 @@ The most promising path forward involves LLM-based approximation of ST metrics, 
 
 If successful, ST-guided discovery systems could enable several applications:
 
-**Puzzle Detection Systems**: Scan for patterns with simple descriptions but complex explanations—ST's signature of breakthrough opportunities. Applications range from monitoring research literature for emerging conceptual puzzles to analyzing personal knowledge systems (Obsidian, Roam Research) for unexpectedness patterns.
+**Puzzle Detection Systems**: Scan for compression opportunities. Applications range from monitoring research literature for emerging conceptual puzzles to analyzing personal knowledge systems (Obsidian, Roam Research) for unexpectedness patterns.
 
 **Hybrid Discovery Systems**: Human concept generation paired with AI insight evaluation—researchers propose connections while AI evaluates compression gain, creating human-AI teams optimized for different aspects of discovery.
 
@@ -150,7 +146,7 @@ The potential is significant: research tools that actively support discovery rat
 
 We have promising theory and emerging computational approaches, but significant experimentation is required to determine if this actually works in practice.
 
-Simplicity Theory addresses Gwern's insight recognition problem through compression gain detection, while validated LLM capabilities demonstrate feasible concept combination. The critical missing piece is bridging theory to practice—developing reliable ST-guided filtering that works with natural language knowledge systems.
+ST addresses Gwern's insight recognition problem through compression gain detection, while validated LLM capabilities demonstrate feasible concept combination. The critical missing piece is bridging theory to practice—developing reliable ST-guided filtering that works with natural language knowledge systems.
 
 The most promising path forward involves LLM-based approximation of ST metrics, but substantial empirical work is needed to validate whether this approach can reliably distinguish meaningful insights from sophisticated-sounding noise.
 
