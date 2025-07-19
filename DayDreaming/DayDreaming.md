@@ -102,19 +102,29 @@ Simplicity Theory addresses Gwern's two challenges very differently—definitive
 
 ## Implementation Reality: What Can We Actually Build?
 
-Can we build AI that discovers like Darwin did? The question cuts to the heart of whether computational systems can replicate the leap from scattered observations to transformative insight.
+Can we build AI that discovers like Darwin did? The question cuts to the heart of whether computational systems can replicate the leap from scattered observations to transformative insight. Let's examine what's possible now, what's promising but unproven, and what remains fundamentally difficult.
 
-**What Exists Now**: The [CompLog framework](https://arxiv.org/abs/2307.15453) provides a working implementation for evaluating proposed connections through compression ratios, moving ST from pure theory toward testable systems.
+### Current Capabilities: Insight Evaluation Proof of Concept
 
-**Open Research Directions**: Several promising but unvalidated approaches could make ST-based discovery more practical:
+The [CompLog framework](https://arxiv.org/abs/2307.15453) provides a working implementation for evaluating proposed connections through compression ratios, moving ST from pure theory toward testable systems. However, CompLog requires ideas to be encoded in formal logic representations—it cannot directly process natural language text articles without significant preprocessing to extract logical relationships. While this demonstrates ST's computational feasibility, the non-trivial encoding requirement means we don't yet have a practical solution for evaluating insights in existing text-based knowledge systems.
 
-*Detecting Compression Opportunities*: Identifying patterns with simple descriptions but complex explanations, flagging high-potential conceptual puzzles. This could work across contexts—scanning research literature for breakthrough opportunities or monitoring personal knowledge management systems (Obsidian, Roam Research, Zettelkasten) to spot when accumulated notes form puzzles ripe for insight. Such systems could combine human concept generation with AI insight recognition—researchers propose connections while AI evaluates compression gain.
+**LLM-Based Unexpectedness Estimation**: This is why we propose experimenting with language models to estimate U = Cv - C through targeted prompts—asking for generation complexity ("Given what we knew in 1838, how difficult would Darwin's connection be to generate?") versus description complexity ("How simply can this be stated?"). A more direct computational approach (daydreamed by o3 - see the Appendix) could estimate U = Cv – C where:
+• Cv ≈ negative log-prob under the base LLM (how hard to produce)
+• C ≈ token-compression length or min-description under a lightweight coder (how easy to describe)
 
-A more accessible way to implement this evaluation could be *LLM-Based Unexpectedness Estimation*: using language models to estimate U = Cv - C by prompting for generation complexity ("Given what we knew in 1838, how difficult would Darwin's connection be to generate?") versus description complexity ("How simply can this be stated?"). This could be more accessible than CompLog's formal logic while remaining mathematically grounded, though it's unclear whether LLMs would capture the relationships ST requires.
+This approach could work directly with natural language text, bypassing CompLog's encoding requirements. While potentially more practical than formal logic representations, it remains unclear whether LLMs would capture the precise relationships ST requires.
 
-> If we could detect when concepts form puzzles where simple patterns require complex explanations—signaling compression opportunities—which conceptual puzzles would be most ripe for breakthrough?
+### Near-Term Possibilities: Puzzle Detection
 
-What remains beyond current capabilities is the core challenge: systematically generating which concepts to combine in the first place. This requires understanding meaning, abstraction formation, and connecting different fields—core parts of intelligence itself.
+Beyond insight evaluation, another promising approach could help identify where breakthroughs are possible:
+
+**Compression Opportunity Detection**: Systems that scan for patterns with simple descriptions but complex explanations—the signature of puzzles ripe for breakthrough. This could work across contexts: monitoring research literature for emerging conceptual puzzles, or analyzing personal knowledge systems (Obsidian, Roam Research, Zettelkasten) to spot when accumulated notes form unexpectedness patterns. Such hybrid systems would combine human concept generation with AI insight recognition—researchers propose connections while AI evaluates compression gain.
+
+If such puzzle-detection systems worked, they could transform discovery across domains. Which conceptual puzzles in today's research would be most ripe for breakthrough?
+
+### Fundamental Limitations: The Generation Problem
+
+What remains beyond current capabilities is the core challenge that limits all discovery systems: systematically generating which concepts to combine in the first place. This requires understanding meaning, abstraction formation, and connecting across different fields—essentially core aspects of intelligence itself. ST can evaluate proposed connections and identify puzzles, but it cannot tell us to "combine population theory with heredity" any more than it could have whispered Darwin's insight in his ear.
 
 ## Conclusion
 
