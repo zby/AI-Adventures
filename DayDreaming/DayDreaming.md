@@ -6,7 +6,7 @@ Picture yourself stuck on a problem for weeks, then while making coffee, two unr
 
 But Gwern's approach has two critical gaps. First, while he can check if ideas are coherent and measure their novelty, he leaves "usefulness" completely undefined. Second, randomly selecting concepts to combine is computationally inefficient—we need smarter targeting.
 
-This is where [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) becomes relevant. ST offers a promising mathematical approach to Gwern's usefulness problem—providing a theoretical framework to distinguish meaningful insights from meaningless associations. ST addresses one part of the search problem—recognizing when concepts form coherent puzzles (opportunities for compression gain)—but leaves another part unsolved: the systematic generation of which concepts to consider combining in the first place.
+This is where [Simplicity Theory](https://simplicitytheory.telecom-paris.fr/) becomes relevant. ST offers a promising mathematical approach to Gwern's usefulness problem—providing a theoretical framework to distinguish meaningful insights from meaningless associations. ST addresses one part of the search problem—recognizing when concepts form coherent puzzles—but leaves another part unsolved: the systematic generation of which concepts to consider combining in the first place.
 
 ## The Framework: Simplicity Theory
 
@@ -32,7 +32,7 @@ ST recognizes genuine insights by measuring how much **compression gain** they p
 
 High unexpectedness scores signal **compression gain**—when many separate observations collapse into a single explanatory mechanism, creating both simplicity and power. This is what distinguishes breakthrough insights from meaningless novelty.
 
-We can identify opportunities for compression gain by looking for situations where simple patterns require complex explanations. When you can efficiently describe patterns but explaining *why* those patterns exist requires many separate, complex causal mechanisms, that signals potential for breakthrough—areas where a theoretical insight could collapse many separate explanations into a single mechanism. ST can tell you "adaptation research is ready for a breakthrough" but cannot tell you "combine population theory with heredity."
+We can identify puzzles by looking for situations where simple patterns require complex explanations. ST can tell you "adaptation research is ready for a breakthrough" but cannot tell you "combine population theory with heredity."
 
 ### Observer-Dependent Complexity: Making ST Practical
 
@@ -78,7 +78,7 @@ ST addresses Gwern's two challenges very differently—providing a principled ap
 - [Recent computational work](https://arxiv.org/abs/2307.15453) demonstrates these calculations are feasible in constrained domains through logic programming, though practical implementation for natural language remains an open challenge
 
 **What ST Improves But Doesn't Solve**: **Concept Generation**
-- ST addresses puzzle recognition—identifying when existing concepts form coherent patterns that signal compression opportunities
+- ST addresses puzzle recognition—identifying when existing concepts form coherent puzzles
 - However, ST leaves unsolved the systematic generation problem: determining which specific concepts are worth considering for combination in the first place
 - ST excels at evaluating proposed combinations but provides minimal guidance for generating them—the crucial middle step of navigating the exponential search space remains largely unsolved
 
