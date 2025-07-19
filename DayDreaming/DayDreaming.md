@@ -12,7 +12,7 @@ Consider the math: If you have just 1,000 concepts in your knowledge base, there
 
 Gwern proposes using LLMs to evaluate usefulness, but this creates a second problem: **LLMs can't reliably distinguish genuine insights from sophisticated noise**. Without principled criteria for recognizing genuine insights, you're drowning in combinations that sound profound but lack real compression power.
 
-To solve both problems, we need principled evaluation criteria that can distinguish genuine insights from sophisticated noise, AND a way to mathematically decompose the exponential search space. This is exactly what Simplicity Theory provides. It offers more than just better evaluation—it provides the principled filtering needed for mathematical decomposition of the search space. Instead of searching all possible combinations at once, we can search hierarchically: find puzzles first, then find their solutions.
+To solve both problems, we need principled evaluation criteria that can distinguish genuine insights from sophisticated noise, AND a way to mathematically decompose the exponential search space. Simplicity Theory provides the first piece—principled evaluation criteria. But our key insight is that ST's filtering capabilities enable the second piece: mathematical decomposition of the search space through a two-phase approach. Instead of searching all possible combinations at once, we can search hierarchically: find puzzles first, then find their solutions.
 
 Here's how.
 
