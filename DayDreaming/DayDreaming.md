@@ -6,13 +6,13 @@ Picture yourself stuck on a problem for weeks. Then while making coffee, two unr
 
 His approach is elegant: build AI that combines random facts from its knowledge base, then filters the results for useful insights. Think of it as systematic serendipity—instead of waiting for lightning to strike, you create thousands of controlled lightning storms.
 
-But there are two key gaps. First, randomly combining concepts faces exponential search spaces. Second, LLMs can't reliably evaluate the results.
+But there are two key gaps: the **combinatorial explosion problem** (exponential search spaces from random concept combinations) and the **evaluation problem** (LLMs can't reliably distinguish genuine insights from sophisticated noise).
 
 Consider the math: If you have just 1,000 concepts in your knowledge base, there are roughly 500,000 ways to combine pairs. But real breakthroughs often require combining three, four, or more concepts—Darwin needed population pressure + variation + inheritance + time. For 3-concept insights, you're looking at 166 million combinations. For 4-concept insights? Over 41 billion combinations. Most are meaningless noise like "blue sky + pizza ingredients + bicycle gears + quantum mechanics."
 
-Gwern proposes using LLMs to evaluate usefulness, but this creates a second problem: **LLMs can't reliably distinguish genuine insights from sophisticated noise**. Without principled criteria for recognizing genuine insights, you're drowning in combinations that sound profound but lack real compression power.
+Without principled criteria for recognizing genuine insights, you're drowning in combinations that sound profound but lack real compression power.
 
-To solve both problems, we need principled evaluation criteria that can distinguish genuine insights from sophisticated noise, AND a way to mathematically decompose the exponential search space. Simplicity Theory provides the first piece—principled evaluation criteria. But our key insight is that ST's filtering capabilities enable the second piece: mathematical decomposition of the search space through a two-phase approach. Instead of searching all possible combinations at once, we can search hierarchically: find puzzles first, then find their solutions.
+To solve the combinatorial explosion problem and evaluation problem, we need principled evaluation criteria AND a way to mathematically decompose the search space. Simplicity Theory provides the first piece—principled evaluation criteria. But our key insight is that ST's filtering capabilities enable the second piece: mathematical decomposition of the search space through a two-phase approach. Instead of searching all possible combinations at once, we can search hierarchically: find puzzles first, then find their solutions.
 
 Here's how.
 
@@ -39,7 +39,7 @@ This limitation actually points to the solution: if ST excels at filtering but n
 
 ## Why ST Enables a Two-Phase Discovery Architecture
 
-We can use ST to solve both of Gwern's problems through this two-phase approach that reduces search complexity AND provides principled evaluation:
+Here's how ST solves both problems through hierarchical search that reduces complexity AND provides principled evaluation:
 
 **Phase 1: Search for Valid Puzzles**
 - **Search space**: All concept combinations from your knowledge base  
@@ -55,7 +55,7 @@ We can use ST to solve both of Gwern's problems through this two-phase approach 
 - **Evaluation**: ST filters for genuine insights (compression gain)
 - **Terminate**: When insight found or search budget exhausted
 
-The key advantage: ST addresses both of Gwern's problems. It provides principled evaluation criteria (distinguishing genuine insights from sophisticated noise), and its filtering in Phase 1 enables mathematical decomposition of the search space. Instead of searching all possible combinations directly, we can split the problem hierarchically.
+The key advantage: ST provides principled evaluation criteria, and its Phase 1 filtering enables splitting the problem hierarchically instead of searching all combinations directly.
 
 Here's why this dramatically reduces computational cost:
 
@@ -74,9 +74,9 @@ The key insight: **mathematical decomposition reduces total combinations**. Inst
 
 **Important limitation**: The two-phase approach dramatically reduces search complexity but doesn't eliminate exponentiality entirely. We're still dealing with exponential growth—just with much better constants and aggressive pruning. The advantage comes from the rarity of valid puzzles, but if your domain has many legitimate puzzles, Phase 2 could still explode combinatorially.
 
-## The Two-Phase Approach in Action: Darwin's Breakthrough
+## Hierarchical Search in Action: Darwin's Breakthrough
 
-Let's simulate how the two-phase approach would discover and solve the adaptation puzzle that led to evolution theory. *(Note: This simulates our algorithm applied to 19th-century naturalist knowledge—we're not claiming anyone followed this process.)*
+Let's simulate how hierarchical search would discover and solve the adaptation puzzle that led to evolution theory. *(Note: This simulates our algorithm applied to 19th-century naturalist knowledge—we're not claiming anyone followed this process.)*
 
 **Phase 1: Puzzle Discovery**
 Starting with the naturalist knowledge base, systematically combine concepts:
@@ -102,15 +102,13 @@ Now systematically apply expensive computational resources to this validated puz
 
 **ST's insight evaluation**: Massive compression gain achieved. What required countless separate explanations now follows from one simple rule.
 
-This demonstrates the two-phase approach: systematic puzzle search identifies valid targets (Phase 1), then systematic insight search focuses computational resources where they matter most (Phase 2). The algorithm would systematically detect validated puzzles and direct search efforts to find the missing insights.
-
-This demonstrates the practical power of hierarchical search over direct search.
+This demonstrates how systematic puzzle identification (Phase 1) focuses computational resources on validated targets, then systematic insight search (Phase 2) efficiently finds breakthroughs—the practical power of hierarchical over direct search.
 
 ## What Can We Actually Build Today?
 
 We have a concrete algorithmic approach, but implementation challenges remain.
 
-**The algorithm is clear**: Two-phase hierarchical search using LLMs for generation and ST for evaluation. Phase 1 searches concept combinations for valid puzzles, Phase 2 searches additional concepts for insights (but only for validated puzzles).
+**The algorithm is clear**: hierarchical search using LLMs for generation and ST for evaluation. Phase 1 finds valid puzzles, Phase 2 finds insights for those puzzles.
 
 **The implementation challenge**: Building reliable ST approximations that work at scale with natural language concepts.
 
@@ -120,9 +118,9 @@ Two approaches show promise:
 
 **LLM Approximation Route**: Use language models to estimate ST's complexity measures directly with natural language. For example, estimating generation complexity (Cv) through negative log-probability under the base model, and description complexity (C) through token compression length. This bypasses CompLog's encoding bottleneck but needs validation at scale.
 
-To validate the basic premise of AI concept combination, we tested whether LLMs could independently discover meaningful connections between Gwern's essay and Simplicity Theory. The result? All five LLMs tested independently discovered the core argument of this very article—that ST could solve Gwern's evaluation problem (see Appendix). This validates that AI daydreaming as a concept works, though it doesn't test the ST complexity approximation approach itself.
+To validate the basic premise, we tested whether LLMs could independently discover meaningful connections between Gwern's essay and Simplicity Theory. All five LLMs tested independently discovered the core argument of this article—that ST could solve Gwern's evaluation problem (see Appendix). This validates that AI daydreaming works conceptually, though it doesn't test the ST complexity approximation approach itself.
 
-The implementation path is clear: build the two-phase system using LLM approximations of ST, then test whether it achieves the predicted computational advantages.
+The implementation path: build the system using LLM approximations of ST, then test whether it achieves the predicted computational advantages.
 
 The algorithmic breakthrough is conceptual. The engineering challenge is making it robust and scalable.
 
@@ -140,11 +138,9 @@ The vision is compelling: research tools that actively support discovery rather 
 
 ## The Path Forward
 
-We have more than just the pieces for a solution to Gwern's discovery problem—we have a concrete algorithmic approach. ST provides mathematical principles for recognizing insights. LLMs can generate concept combinations and evaluate puzzles/solutions. The two-phase architecture dramatically reduces search complexity.
+We have a concrete algorithmic approach: ST provides mathematical principles for recognizing insights, LLMs handle generation and basic evaluation, and the architecture dramatically reduces search complexity.
 
-The most promising immediate step: build systems that implement the two-phase approach using language models to approximate ST's complexity calculations, then test whether hierarchical search actually achieves the predicted efficiency gains.
-
-This isn't just theoretical—it's testable and implementable. Start with constrained domains where you can verify results. Build two-phase discovery tools. Test whether ST-guided hierarchical search actually outperforms direct insight generation.
+The path forward: build systems using LLM approximations of ST, then test whether hierarchical search achieves the predicted efficiency gains. Start with constrained domains where you can verify results.
 
 The computational advantage is clear in theory. The question is whether it holds up in practice.
 
