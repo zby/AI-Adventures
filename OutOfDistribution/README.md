@@ -2,15 +2,19 @@
 
 A common worry: LLMs can only remix their training data, so they can't produce genuinely new knowledge. They're stuck "in distribution," unable to make the creative leaps that real discovery requires.
 
-This conflates two different things. Yes, any model samples from some representable space. But discovery doesn't require escaping that space—it requires searching it effectively and recognizing correct answers when found.
+This conflates the model with the system. A model may sample from some space, but a discovery system can include many components beyond the model itself. The system can discover new knowledge even when individual components stay "in distribution."
 
 Here's a simple counterexample. Take a generator that enumerates well-formed candidates—mathematical proofs, programs, molecular structures. Pair it with a verifier that checks each against fixed criteria: Does this proof derive from the axioms? Does this code compile and pass its tests? Does this molecule satisfy the constraints?
 
 This pair already constitutes a discovery machine. In mathematics, exhaustive enumeration plus a proof checker will eventually produce all theorems of a formal system. **The generator doesn't need intelligence. The verifier doesn't need creativity.** The bottleneck is efficiency and verification quality, not whether candidates come from "outside a distribution." What matters is whether your search space contains the knowledge you seek and whether you can recognize it.
 
+Crucially, pairing a generator with a verifier reshapes the effective distribution—the verifier filters the generator's output, so the system as a whole produces a different distribution than the generator alone.
+
 ### Where LLMs fit
 
 LLMs are learned heuristic samplers. They guide search toward plausible structures—proofs that look valid, code that looks compilable, molecules that appear chemically sensible. Replace blind enumeration with an LLM and you get intelligent prioritization of promising candidates. With a strong verifier, you can transform plausible guesses into reliable discoveries.
+
+The architecture is flexible. An LLM can serve as the generator in a generator-verifier system. You can also pair generators: Gwern's "AI Daydreaming" proposal combines an enumerator that systematically explores concept pairs with an LLM that elaborates each pair into concrete ideas. The enumerator provides systematic coverage; the LLM provides elaboration.
 
 |                      | Weak Verifier                              | Strong Verifier                        |
 | -------------------- | ------------------------------------------ | -------------------------------------- |
