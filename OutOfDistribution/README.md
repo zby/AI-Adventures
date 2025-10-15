@@ -8,20 +8,20 @@ Here's a simple counterexample. Take a generator that enumerates well-formed can
 
 This pair already constitutes a discovery machine. In mathematics, exhaustive enumeration plus a proof checker will eventually produce all theorems of a formal system. **The generator doesn't need intelligence. The verifier doesn't need creativity.** The bottleneck is efficiency and verification quality, not whether candidates come from "outside a distribution." What matters is whether your search space contains the knowledge you seek and whether you can recognize it.
 
-Crucially, pairing a generator with a verifier reshapes the effective distribution—the verifier filters the generator's output, so the system as a whole produces a different distribution than the generator alone.
+Note that pairing a generator with a verifier reshapes the effective distribution—the verifier filters the generator's output, so the system as a whole produces a different distribution than the generator alone.
 
 ### Where LLMs fit
 
 LLMs are learned heuristic samplers. They guide search toward plausible structures—proofs that look valid, code that looks compilable, molecules that appear chemically sensible. Replace blind enumeration with an LLM and you get intelligent prioritization of promising candidates. With a strong verifier, you can transform plausible guesses into reliable discoveries.
-
-The architecture is flexible. An LLM can serve as the generator in a generator-verifier system. You can also pair generators: Gwern's "AI Daydreaming" proposal combines an enumerator that systematically explores concept pairs with an LLM that elaborates each pair into concrete ideas. The enumerator provides systematic coverage; the LLM provides elaboration.
 
 |                      | Weak Verifier                              | Strong Verifier                        |
 | -------------------- | ------------------------------------------ | -------------------------------------- |
 | Weak Generator       | Nonsense in, nonsense out                  | Slow but real discovery                |
 | Strong Generator     | Fluent errors that look convincing         | Practical discovery at useful rates    |
 
-LLMs occupy the bottom row. Their value lies in heuristic search guidance, not in mystical creativity. Progress depends on moving from left to right—building stronger verifiers.
+LLMs occupy the bottom row. Their value lies in heuristic search guidance, not in mystical creativity. In this paradigm, progress depends on moving from left to right—building stronger verifiers.
+
+The architecture is flexible. An LLM can serve as the generator in a generator-verifier system. You can also pair generators: Gwern's "AI Daydreaming" proposal combines an enumerator that systematically explores concept pairs with an LLM that elaborates each pair into concrete ideas. The enumerator provides systematic coverage; the LLM provides elaboration.
 
 ### Implications
 
@@ -37,9 +37,7 @@ For the generation-verification approach specifically, the bottleneck is verific
 
 *"Some truths aren't provable."* True, but that's a limit on what a particular formal verifier can certify, not on generation. It argues for diversified verification methods—formal, empirical, statistical.
 
-*"Generation plus verification isn't how humans are creative."* Perhaps, but that's beside the point. The claim was that LLMs can't be creative because they're stuck in-distribution. This counterexample shows that constraint isn't fundamental.
-
-### The better questions
+### Better questions
 
 Instead of asking whether LLMs can "step out of distribution," ask:
 
