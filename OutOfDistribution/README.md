@@ -25,11 +25,9 @@ LLMs occupy the bottom row. Their value lies in heuristic search guidance, not i
 
 ### Implications
 
-**The "in-distribution versus out-of-distribution" framing asks the wrong question.** Discovery happens through exploring combinatorial spaces and filtering for correctness, not through leaps beyond statistical boundaries. Generation plus verification isn't the only approach—reinforcement learning, program synthesis, and evolutionary methods offer different paths—but it suffices to show the constraint isn't fundamental.
+**The "in-distribution versus out-of-distribution" framing asks the wrong question.** The counterexample above demonstrates that discovery can happen without requiring any component to leap beyond statistical boundaries. Generation plus verification isn't the only path—reinforcement learning discovers through interaction, program synthesis through compositional building, evolutionary methods through variation and selection. But the example suffices to show that "being stuck in distribution" isn't the fundamental barrier it's claimed to be.
 
-The real bottleneck in this paradigm is verification. Many domains lack theorem provers or analyzers rich enough to certify results. Empirical verification can be slow or expensive. Often we can't even specify what "correct" means precisely enough to check it automatically.
-
-The most productive AI-augmented workflows pair models with tight feedback loops: test suites, formal specifications, proof checkers, validated simulators. This benefits both discovery and safety, filtering harmful outputs and aligning incentives toward correctness. Progress requires building stronger verifiers and optimizing for verified discoveries per unit of compute.
+For the generation-verification approach specifically, the bottleneck is verification strength. Many domains lack theorem provers or analyzers rich enough to certify results. Empirical verification can be slow or expensive. Often we can't even specify what "correct" means precisely enough to check it automatically. The most productive workflows in this paradigm pair models with tight feedback loops: test suites, formal specifications, proof checkers, validated simulators. This benefits both discovery and safety, filtering harmful outputs and aligning incentives toward correctness.
 
 ### Common objections
 
