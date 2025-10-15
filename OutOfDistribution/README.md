@@ -23,11 +23,11 @@ LLMs occupy the bottom row. Progress depends on moving from left to right.
 
 This doesn't exhaust the space of approaches to machine creativity—reinforcement learning, program synthesis, and evolutionary methods each offer different paths. The point is simply that generation plus verification suffices as a counterexample to the claim that AI must "step outside its distribution" to create.
 
-### The real bottleneck
+### The bottleneck in this approach
 
 Discovery pipelines based on generation and verification stall when verifiers are weak. Many domains lack theorem provers or analyzers rich enough to certify results. Empirical verification can be slow or expensive. Often we can't even specify what "correct" means precisely enough to check it automatically.
 
-The most productive AI-augmented workflows pair models with tight feedback loops: test suites, formal specifications, proof checkers, validated simulators. This benefits both discovery and safety, filtering harmful outputs and aligning incentives toward correctness rather than fluency. Progress requires building stronger verifiers and optimizing for verified discoveries per unit of compute.
+The most productive AI-augmented workflows pair models with tight feedback loops: test suites, formal specifications, proof checkers, validated simulators. This benefits both discovery and safety, filtering harmful outputs and aligning incentives toward correctness rather than fluency. Progress in this paradigm requires building stronger verifiers and optimizing for verified discoveries per unit of compute.
 
 ### Common objections
 
